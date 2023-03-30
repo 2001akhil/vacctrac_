@@ -1,0 +1,52 @@
+*{
+  background-color: #0D5950;
+  /* position: fixed; */
+}
+
+.head1{
+    padding-top:70px;
+    text-align: center;
+    color: white;
+    font-size: 80px;
+}
+.head2{
+    text-align: center;
+    color: white;
+}
+
+.form{
+    padding-left: 500px;
+    color: white;
+   
+}
+button{
+    /*Author:akhil*/
+    height: 50px;
+    width: 100px;
+    position:absolute;
+    left:670px;
+    top:125px;
+    /* margin-top: 75px; */
+    padding:4px 8px 6px;
+    border-radius: 25px;
+    margin-top: 210px;
+    bottom: unset;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: white;
+    color: #0D5950;
+    /* opacity: 50%; */
+   
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+}
+

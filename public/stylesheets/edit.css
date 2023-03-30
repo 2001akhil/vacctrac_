@@ -1,0 +1,126 @@
+@media only screen and (min-width: 350px) and (max-width: 1920px) {*{
+    background-color: #0D5953;
+    overflow: hidden;
+}
+img{
+  position: absolute;
+  width: 100x;
+  height: 100px;
+  left:52px;
+  top:36px;
+  overflow: visible; 
+}
+
+button.btn1{
+    margin-top: 25px;
+    background-color: white;
+    border: double 3px;
+    border-radius: 55px;
+    height: 45px; 
+    /* cursor: pointer; */
+    float:right;
+    margin-left: 85%;
+    position: absolute;
+    z-index: inherit;
+}
+
+h2.def{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    font-weight: bolder;
+    color: #0D5953;
+    background-color: white;
+    margin-top: 5px;
+}
+table{
+    margin-top: 60px;
+}
+td {
+    padding: 5px 20px 0px 300px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large; 
+}
+h4{
+    color: white;
+    font-size: 20px;
+}
+input{
+    width: 200px;
+    height: 30px;
+    border-radius: 50px;
+    border: 1px solid #ffffff;
+    box-shadow: 0 0 5px #ffffff;
+    background-color: #0D5953;
+    padding: 5px;
+    font-size: large;
+    color: white;
+}
+input::placeholder{
+    font-style: italic;
+    font-size: smaller;
+}
+
+/* div{
+    position: absolute;
+    margin-left: 122px;
+} */
+h2.abc{
+    width:300px;
+    margin-left: 200px;
+    color: orange;
+}
+div.slot1 {
+    background-color: rgb(255, 5, 5);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    margin-right: 2px 4px;
+    margin-left: 200px;
+  }
+  
+  div.slot2 {
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+    margin-left: 320px;
+    position: absolute;
+  }
+  
+  div.slot3 {
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    margin-left: 440px;
+    
+  }
+
+  div.slot4 {
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    margin-left: 560px;
+  }
+
+  button.btn2{
+    float: right;
+    height: 45px;
+    width: 120px;
+    border-color: rgb(255, 255, 255);
+    border-radius: 60px;
+    background-color: white;
+    z-index: inherit;
+    position: absolute;
+    margin-left: 770px;
+    bottom: 20px;
+  }
+  h2.ab{
+    font-size: xx-larger;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    margin-top: 10px;
+    background-color: white;
+    color: #0D5953;
+  }
+}

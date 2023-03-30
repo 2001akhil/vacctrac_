@@ -1,0 +1,199 @@
+@media only screen and (min-width: 350px) and (max-width: 1920px) {
+  body{
+    background-color: #0D5953;
+    background-attachment: fixed;
+    box-sizing: border-box; 
+    padding: 0;
+}
+h2.abc{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    margin-top: 200px;
+    color: white;
+    margin-left: 200px;
+}
+h2.def{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    color: white;
+    margin-left: 200px;
+}
+
+label{
+    display: inline-block;
+    width: 260px;
+    margin-top: 0px;
+    padding: 0px;
+}
+h2.btn{
+  font-family: 'Times New Roman', Times, serif;
+}
+img {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 52px;
+  top: 36px;
+  overflow: visible;
+  background-color: #0D5953;
+}
+input{
+  width: 200px;
+  margin-top: 10px;
+  margin-left: 40px;
+  height: 20px;
+  background-color: #7b8a89;
+}
+  
+.btn1 {
+    float: right;
+    margin-top: 50px;
+    margin-right: 100px;
+    background-color: #ffffff;
+    color: #0D5953;
+    border-radius: 55px;
+    width: 100px;
+    height: 55px;
+    border: solid white 2px;
+    z-index: inherit;
+}
+.btn2 {
+    float: right;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 72%;
+    background-color: #ffffff;
+    color: #0D5953;
+    width: 120px;
+    height: 55px;
+    border: rgb(255, 255, 255) solid 2px;
+    border-radius: 40px;
+
+}
+
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    width: 600px;
+    height: 200px;
+    margin-left: 200px
+  }
+  
+  .slot1 {
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+  }
+  
+  .slot2 {
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+  }
+  
+  .slot3 {
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+  }
+
+  .slot4 {
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* *{
+    background-color: #0D5953;
+    background-attachment: fixed;
+    box-sizing: border-box; 
+}
+h2.abc{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    margin-top: 250px;
+    color: white;
+    margin-left: 100px;
+}
+h2.def{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    margin-bottom: 15px;
+    color: white;
+    margin-left: 100px;
+}
+
+label{
+    display: inline-block;
+    width: 260px;
+    margin-top: 20px;
+}
+h2.btn{
+  font-family: 'Times New Roman', Times, serif;
+}
+  
+.btn1 {
+    float: right;
+    margin-top: -700px;
+    margin-right: 100px;
+    background-color: #0D5953;
+    color: white;
+    border: solid white 4px;
+    border-radius: 55px;
+    width: 120px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.btn2 {
+    float: right;
+    margin-bottom: 1px;
+    margin-right: 400px;
+    background-color: #0D5953;
+    color: white;
+    border: rgb(255, 255, 255) solid 4px;
+    border-radius: 40px;
+    width: 100px;
+    height: 60px;
+    cursor: pointer;
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    width: 600px;
+    height: 400px;
+    margin-left: 100px
+  }
+  
+  .slot1 {
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+  }
+  
+  .slot2 {
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+  }
+  
+  .slot3 {
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+  }
+
+  .slot4 {
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+  }
+  
+   */

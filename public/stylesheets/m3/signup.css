@@ -1,0 +1,86 @@
+  *{
+    background-color: #0D5953;
+    /* background-size: cover; */
+    overflow: hidden;
+}
+h1{
+    margin-top: 100px;
+    margin-left: 700px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+h2{
+    margin-left: 630px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 10px;
+    opacity: 80%;
+}
+h3.email{
+    color: white;
+    margin-left: 500px;
+    margin-top: 100px;
+    
+}
+h3.name{
+    color: white;
+    margin-left: 500px;
+    margin-top: 30px;
+}
+h3.pswd{
+    color: white;
+    margin-left: 500px;
+    margin-top: 30px;
+}
+input.email{
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  border-bottom: white solid 1px;
+  margin-left: 500px;
+  width: 700px;
+}
+input.name{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    border-bottom: white solid 1px;
+    margin-left: 500px;
+    width: 700px;
+}
+
+  input.pswd{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    border-bottom: white solid 1px;
+    margin-left: 500px;
+    width: 700px;
+}
+input::placeholder {
+    color: #999; 
+    font-style: italic;
+    opacity: 0.5; 
+  }
+  button{
+    color: #0D5953;
+    border: white solid 2px;
+    background-color: white;
+    border-radius: 55px;
+    margin-top: 70px;
+    margin-left: 800px;
+    height: 60px;
+  }
+  b{
+    font-size: xx-large;
+    font-family: 'Times New Roman', Times, serif;
+    color: #0D5953;
+    background-color: white;
+  }
+  

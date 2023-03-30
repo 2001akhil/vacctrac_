@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="stylesheets/slot.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="localhost:3000/slot" method="POST">
+    
+    <h2 class="abc">SLOTS AVAILABLE</h2>
+    <div class="row">
+    <div class="container">
+     <div class="slot1"></div> 
+     <div class="slot2"></div>
+     <div class="slot3"></div>
+     <div class="slot4"></div>
+    </div>
+    </div>
+
+
+    <div>
+    <form class="form-inline">
+    <label name="temp"><h2 class="def">TEMPERATURE<br>(in degrees)</h2></label>
+    <input type="text" id="temp" name="temp">
+    </form>
+    </div>
+    <div>
+    <button class="btn1" type="button"   onclick=""><h2 class="btn">GO BACK</h2></button>
+    </div>
+    <div>
+        <button class="btn2" type="button" onclick=""><h2 class="btn">NEXT</h2></button>
+    </div>
+    <script>
+        fetch("http://localhost:3000/slot").then(async(resp)=>{
+            // console.log(await resp.json())
+            var sq= await resp.json();
+
+            document.getElementById('temp').value=sq.data["Vaccine Name"]
+            document.getElementById('').value=sq.data[""]
+            
+        })
+        
+        </script>
+        </form>
+</body>
+</html>

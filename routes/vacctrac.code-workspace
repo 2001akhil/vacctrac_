@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../../Documents/Registration"
+		},
+		{
+			"path": "../../../../Documents/test"
+		},
+		{
+			"path": "../../mainprj"
+		},
+		{
+			"path": "../../Auxilia_p"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Auxilia_p"
+	}
+}

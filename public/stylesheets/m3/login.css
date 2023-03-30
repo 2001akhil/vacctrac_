@@ -1,0 +1,82 @@
+*{
+    background-color: #0D5953;
+}
+h1{
+    margin-top: 200px;
+    margin-left: 900px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+h2{
+    margin-left: 850px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 10px;
+    opacity: 80%;
+}
+h3.email{
+    color: white;
+    margin-left: 700px;
+    margin-top: 100px;
+    
+}
+h3.pswd{
+    color: white;
+    margin-left: 700px;
+    margin-top: 50px;
+}
+input.email{
+  border: none;
+  background-color: transparent;
+  border-radius: 55px; 
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  border: white solid 1px;
+  margin-left: 700px;
+  width: 500px;
+  height: 50px;
+}
+
+input.pswd{
+    border: none;
+    background-color: transparent;
+    border-radius: 55px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    border: white solid 1px;
+    margin-left: 700px;
+    width: 500px;
+    height: 50px;
+}
+input::placeholder {
+    color: #999; 
+    font-style: italic;
+    opacity: 0.5; 
+  }
+  button{
+    color: #0D5953;
+    border: white solid 2px;
+    background-color: white;
+    border-radius: 55px;
+    margin-top: 130px;
+    margin-left: 900px;
+    height: 60px;
+  }
+  b{
+    font-size: xx-large;
+    font-family: 'Times New Roman', Times, serif;
+    color: #0D5953;
+    background-color: white;
+  }
+  h4.ab{
+    color: white;
+    margin-left: 650px;
+  }
+  h4.bc{
+    color: red;
+    margin-left: 300px;
+  }
+  .inline-container span {
+    display: inline-block;
+  }
+   

@@ -1,0 +1,100 @@
+body {
+    height: 100vh;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* padding: 10px; */
+    overflow: hidden;
+    background: linear-gradient(135deg, #01322e, #2c8077);
+}
+
+.img-account-profile {
+    margin-top: 5px;
+    margin-left: 50%;
+    height: 90px;
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+    margin-left: 50%;
+}
+
+/* .card {
+      box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+  } */
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.button2 {
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 69%;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #4ac5ba, #06201e);
+}
+
+.card .card-header {
+    font-weight: 100;
+    color: white;
+    margin-left: 45%;
+}
+
+div.card-header {
+    margin-left: 48%;
+    font-weight: bold;
+}
+
+.form-control,
+.dataTable-input {
+    display: block;
+    width: 500px;
+    padding: 20px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1;
+    color: #69707a;
+    margin-left: 30%;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #c5ccd6;
+    border-radius: 0.35rem;
+}
+
+button.primary {
+    margin-left: 69%;
+    margin-top: 10px;
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #4ac5ba, #06201e);
+}
+
+label {
+    margin-left: 27%;
+    color: white;
+    padding: 20px;
+}
+
+h4 {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: x-large;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="front.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/front.css">
+</head>
+
+<body>
+     
+    <div class="container">
+        <!-- <div class="title">Add New Fields</div> -->
+        <div class="content">
+            <form action="/front" method="post">
+            
+                <div class="button2">
+                    <input type="button" value="GO BACK" onclick="window.location.href='login.html'">
+                </div>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Box Name</span>
+                        <input type="text" name="name" placeholder="Enter Box name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Box ID</span>
+                        <input type="text" name="boxid" placeholder="Enter Box ID" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Employee ID</span>
+                        <input type="text" name="empid" {{#if data}}{{#each data}}value="{{this.emp_id}}"{{/each}}{{/if}} placeholder="Enter employee ID" readonly>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Manufacturername</span>
+                        <input type="text" name="password" {{#if data}}{{#each data}}value="{{this.name}}"{{/each}}{{/if}} placeholder="Enter your password" readonly>
+                    </div>
+                    <div class="button1">
+                        <input type="submit" value="NEXT">
+                    </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

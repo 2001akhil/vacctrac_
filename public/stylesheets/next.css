@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+body {
+      font-family: 'Times New Roman', Times, serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      background: linear-gradient(135deg, #01322e, #2c8077);
+}
+
+.formbold-mb-3 {
+      margin-bottom: 15px;
+}
+
+.formbold-relative {
+      position: relative;
+}
+
+.formbold-opacity-0 {
+      opacity: 0;
+}
+
+.formbold-stroke-current {
+      stroke: #ffffff;
+      z-index: 999;
+}
+
+
+.formbold-main-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px;
+}
+
+.formbold-form-wrapper {
+      margin: 0 auto;
+      max-width: 570px;
+      width: 100%;
+      background: white;
+      padding: 40px;
+}
+
+.formbold-img {
+      display: block;
+      margin: 0 auto 45px;
+}
+
+.formbold-input-wrapp>div {
+      display: flex;
+      gap: 20px;
+}
+
+.formbold-input-flex {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 15px;
+}
+
+.formbold-input-flex>div {
+      width: 50%;
+}
+
+.formbold-form-input {
+      width: 350px;
+      padding: 13px 22px;
+      border-radius: 5px;
+      border: 1px solid #dde3ec;
+      background: #ffffff;
+      font-weight: 500;
+      font-size: 16px;
+      color: #000000;
+      outline: none;
+      resize: none;
+}
+
+.formbold-form-label {
+      color: #ffffff;
+      font-size: 20px;
+      line-height: 24px;
+      display: block;
+      margin-bottom: 10px;
+}
+
+.formbold-btn {
+      font-size: 16px;
+      border-radius: 5px;
+      padding: 14px 25px;
+      border: none;
+      font-weight: 500;
+      color: white;
+      cursor: pointer;
+      margin-top: 25px;
+      height: 50px;
+      margin-left: 60%;
+      transition: all 0.3s ease;
+      background: linear-gradient(135deg, #4ac5ba, #06201e);
+}
+
+.formbold-btn:hover {
+      background: linear-gradient(-135deg, #4ac5ba, #06201e);
+}
+
+.formbold-w-45 {
+      width: 45%;
+}
+
+.button2 input {
+      height: 50px;
+      width: 100px;
+      border-radius: 5px;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-top: 460px;
+      margin-left: 180%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: linear-gradient(135deg, #4ac5ba, #06201e);
+}
+
+.button2 input:hover {
+      /* transform: scale(0.99); */
+      background: linear-gradient(-135deg, #4ac5ba, #06201e);
+}
+
+@media(max-width: 584px) {
+      .container {
+            max-width: 100%;
+      }
+}
+
+@media(max-width: 459px) {
+      .container .content .category {
+            flex-direction: column;
+      }
+}

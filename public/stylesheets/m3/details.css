@@ -1,0 +1,51 @@
+*{
+    background-color: #0D5953;
+}
+h1{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    margin-top: 100px;
+    margin-left: 600px;
+}
+
+h3.ab{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    margin-top: 100px;
+    margin-left: 300px;
+}
+h3.cd{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    margin-top: 80px;
+    margin-left: 300px;
+}
+h3.ef{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    margin-top: 80px;
+    margin-left: 300px;
+}
+h3.fg{
+         color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: x-large;
+        margin-top: 80px;
+        margin-left: 300px;
+    
+}
+button{
+    margin-bottom: 800px;
+    position: absolute;
+    top: 80px;
+    right: 100px;
+    border: white solid 3px;
+    border-radius: 65px;
+    width: 120px;
+    color: white;
+    height: 55px;
+}

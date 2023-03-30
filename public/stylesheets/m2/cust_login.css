@@ -1,0 +1,201 @@
+body {
+      background-color: #035852;
+      background-image: url(vaccination-tracking.png);
+      background-repeat: no-repeat;
+      background-position: 700px;
+      background-attachment: fixed;
+      /* margin: 0;
+    padding: 0; */
+      box-sizing: border-box;
+      border: none;
+      position: fixed;
+}
+
+
+.contents {
+      color: aliceblue;
+      position: absolute;
+}
+
+h1 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: xx-large;
+      font-style: normal;
+      margin-top: 200px;
+      position: absolute;
+      left: 300px;
+      font-weight: bolder;
+}
+
+form {
+      position: absolute;
+      margin-top: 300px;
+      margin-left: 300px;
+      /* padding-left: 400px; */
+      padding-top: 10px;
+}
+
+input {
+      /* text-decoration: none; */
+      border: none;
+      /* background-color: #035852;
+    outline:white; */
+      padding: 10px 25px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      /* box-shadow: none; */
+      background-color: #c7ebe9;
+      border-bottom: 2px solid rgb(255, 255, 255);
+      border-radius: 55px;
+      /* border-bottom: 2px solid white; */
+}
+
+h4.ab {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: x-large;
+
+}
+
+h4.bc {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: x-large;
+}
+
+/* .fields {
+    /* height: 60px; */
+
+/* box-sizing: border-box;
+ /   border-block-start-style: solid;
+/* } */
+/* input::placeholder {
+    color: #999; 
+    font-style: italic;
+    opacity: 0.5; 
+  } */
+
+/* #usn {
+    opacity: 0.6;
+    /* left:212px;
+    top:50px;
+    position: absolute;
+    overflow: visible;
+    width:226px;
+    white-space: nowrap;
+    text-align: left;
+    font-family:'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight:normal;
+    font-size:40px; */
+/* } */
+
+/* #pass {
+    opacity: 0.6;
+    /* left:212px;
+    top:60px;
+    position: absolute;
+    overflow: visible;
+    width:226px;
+    white-space: nowrap;
+    text-align: left;
+    font-family:'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight:normal;
+    font-size:40px; */
+/* } */
+
+/* #container {
+    text-align: center;
+    border: 7px;
+    width: 300px;
+    height: 200px;
+    padding-top: 100px;
+} */
+
+button {
+      border: white double 3px;
+      border-radius: 55px;
+      color: #035852;
+      background-color: #ffffff;
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: larger;
+      margin-top: 50px;
+      margin-left: 50px;
+      width: 100px;
+}
+
+
+/* body {
+    background-color: #035852;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    position: fixed;
+}
+.contents {
+    color: aliceblue;
+    position: absolute;
+}
+h1 {
+    position: relative;
+    padding-left: 400px;
+    padding-top: 250px;
+    font-size: 50px;
+}
+form {
+    position: absolute;
+    padding-left: 400px;
+    padding-top: 30px;
+}
+.fields {
+    /* height: 60px; */
+
+
+
+#usn {
+      opacity: 0.6;
+      /* left:212px;
+    top:50px;
+    position: absolute;
+    overflow: visible;
+    width:226px;
+    white-space: nowrap;
+    text-align: left;
+    font-family:'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight:normal;
+    font-size:40px; */
+}
+
+#pass {
+      opacity: 0.6;
+      /* left:212px;
+    top:60px;
+    position: absolute;
+    overflow: visible;
+    width:226px;
+    white-space: nowrap;
+    text-align: left;
+    font-family:'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight:normal;
+    font-size:40px; */
+}
+
+#container {
+      text-align: center;
+      border: 7px;
+      width: 300px;
+      height: 200px;
+      padding-top: 100px;
+
+}
+
+#btn {
+      padding: 205px;
+
+
+
+}
+

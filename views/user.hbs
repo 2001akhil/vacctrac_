@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="stylesheets/user.css">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <!-- <div class="container-xl px-4 mt-4"> -->
+      <div class="card-header">
+            <h4>User Details</h4>
+      </div>
+      <div class="row">
+            <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png"
+                  alt="">
+            <form action="/user" method="post">
+              
+                  <div class="mb-3">
+                        <label class="small mb-1" for="inputUsername">Username</label>
+                        <input class="form-control" id="inputUsername"{{#if data}}{{#each data}}value="{{this.name}}"{{/each}}{{/if}} type="text" placeholder="Enter your username">
+                  </div>
+                  <div class="row gx-3 mb-3">
+                        <div class="col-md-6">
+                              <label class="small mb-1" for="inputOrgName">Mobile Number</label>
+                              <input class="form-control"{{#if data}}{{#each data}}value="{{this.mob}}"{{/each}}{{/if}} id="inputnum" type="text"
+                                    placeholder="Enter your mobile number">
+                        </div>
+                        <div class="col-md-6">
+                              <label class="small mb-1" for="inputLocation">Location</label>
+                              <input class="form-control" id="inputLocation" type="text"
+                                    placeholder="Enter your location">
+                        </div>
+                  </div>
+                  <div class="mb-3">
+                        <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                        <input class="form-control" {{#if data}}{{#each data}}value="{{this.email}}"{{/each}}{{/if}}id="inputEmailAddress" type="email"
+                              placeholder="Enter your email address">
+                  </div>
+                  <div class="row gx-3 mb-3">
+                        <div class="col-md-6">
+                              <label class="small mb-1" for="inputPhone">Employee ID</label>
+                              <input class="form-control" {{#if data}}{{#each data}}value="{{this.emp_id}}"{{/each}}{{/if}} id="inputID" type="number"
+                                    placeholder="Enter your Employee id">
+                        </div>
+                  </div>
+                  <div>
+                        <button class="primary" type="button"><a href="page.html">Save changes</button>
+                  </div>
+                  <div>
+                        <button class="button2" type="button"><a href="page.html">GO BACK</button>
+                  </div>
+            </form>
+      </div>
+</body>
+
+</html>
