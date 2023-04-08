@@ -10,7 +10,7 @@ const { response } = require('../app');
 var express = require('express');
 // const path=require('path');
 // const { response } = require('../app');
-var router = express.Router();
+var box = express.Router();
 var db=require('../dbconnector/connection')
 const bcrypt=require('bcrypt');
 const { create } = require('domain');
@@ -21,15 +21,17 @@ const { resourceLimits } = require('worker_threads');
 var number=10;
 
 
-router.get('/',(req,res)=>{
+box.get('/',(req,res)=>{
 
   res.render('box/login');
+})
+
+box.get('/box_page',(req,res)=>{
+  res.render('box/page')
 })
 
 
 
 
 
-
-
-module.exports=router;
+module.exports=box;
