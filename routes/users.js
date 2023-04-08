@@ -21,11 +21,12 @@ const { resourceLimits } = require('worker_threads');
 var number=10;
 
 
-router.post('/main',(req,res)=>{
-  console.log(req.body)
-  var sql=``
-  res.status(200).send("HI")
+router.get('/',(req,res)=>{
+
+  res.render('box/login');
 })
+
+
 
 
 
