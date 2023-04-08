@@ -5,13 +5,14 @@ var express = require('express');
 const path=require('path');
 const { response } = require('../app');
 var router = express.Router();
-var db=require('../views/dbconnector/connection')
+var db=require('../dbconnector/connection')
 const bcrypt=require('bcrypt');
 const { create } = require('domain');
 const { createDecipher } = require('crypto');
 const fs=require('fs');
 const { type } = require('os');
 const { resourceLimits } = require('worker_threads');
+const checkMail = require('./m1authmatch');
 var number=10;
 
 /* GET home page. */
@@ -69,53 +70,40 @@ router.get('/', function(req, res) {
   }
 });
 
-router.post('/login',(req,res)=>{
-  console.log(req.body)
-  var password=req.body.pswd;//front end
-  var email=req.body.email;//front end
-  console.log(email,password)
-  var sql="select * from login where email= ?"
-  db.query(sql,[email], (err,result)=>{
-    if(err){console.log("error"); res.redirect('/');}
+router.post("/login", async (req, res) => {
+  console.log(req.body);
+  var password = req.body.pasw;
+  console.log(password + " from front end");
+  var email = req.body.email;
 
-  else{
-    console.log(result.length)
-  
-  if(result.length>0){
-    const password=req.body.pasw
-    console.log(password)
-    
-    //const bcryp =  bcrypt.compareSync(password, result[0].password); error
-    if(password==result[0].pass)
-   // console.log(bcryp)
-    {
-    
-    
-      req.session.loggedIn=true;
-      // req.session.user=response.user
-      req.session.data=result
-       data=req.session.data
-      if(result[0])
-      {
-     
-      // console.log(data)
-      res.render('page',{data})
+  try {
+    const data = await checkMail(email);
+    console.log(data);
+    if (data.status === "SUCCESS") {
+      console.log("status recived");
+      console.log(data.data.pass);
+      if (password.length > 0) {
+        if (password == data.data.pass) {
+          req.session.loggedIn = true;
+          req.session.data = data.data;
+          let sessionData = req.session.data;
+          res.render("page", { data: sessionData });
+        } else {
+          let pas_werr = "password error";
+          res.redirect("/");
+          console.log("password error");
+        }
       }
-    
-    
-  }
-    else{
-      res.redirect('/')
-      console.log("password error")
+    } else {
+      const em_ailerr = "Email id error";
+      res.redirect("/");
+      console.log("email error");
     }
-  
+  } catch (err) {
+    console.log(err);
+    res.redirect("/");
   }
-}
-  
-
-})
-
-})
+});
 
 router.get('/page', verifyLogin,function(req, res) {
   

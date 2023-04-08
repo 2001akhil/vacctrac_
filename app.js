@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs=require('express-handlebars');
 //const mongoose=require("mongoose"); 
-var db=require('./views/dbconnector/connection')
+var db=require('./dbconnector/connection')
 const bodyParser = require('body-parser');
 const cors=require("cors")
 
