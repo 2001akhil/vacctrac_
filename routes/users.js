@@ -23,7 +23,7 @@ var number=10;
 
 box.get('/',(req,res)=>{
 
-  res.render('box/login');
+  res.render('sign');
 })
 
 box.get('/box_page',(req,res)=>{
