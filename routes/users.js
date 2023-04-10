@@ -37,8 +37,31 @@ box.get('/',(req,res)=>{
 })
 box.post('/login',async(req,res)=>{
   let box_id=req.body.email
+  let box_pass=req.body.pasw
   let box_data=await boxid(box_id)
   try{
+    if (box_data.status == "SUCCESS") {
+      if(box_pass.length>0)
+      {
+        if(box_pass==box_data.data.pass)
+        {
+          req.session.loggedIn=true;
+          req.session
+           res.redirect('/page')
+
+        }
+        else
+        {
+          console.log("Password error");
+          res.redirect('/')
+        }
+      }
+
+    }
+    else{
+      console.log("Box id is not matching")
+    }
+    
     
 
   }
