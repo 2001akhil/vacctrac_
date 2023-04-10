@@ -46,7 +46,8 @@ box.post('/login',async(req,res)=>{
         if(box_pass==box_data.data.pass)
         {
           req.session.loggedIn=true;
-          req.session
+          req.session.data=box_data.data;
+          
            res.redirect('/page')
 
         }
@@ -78,6 +79,8 @@ box.get('/box_page',(req,res)=>{
 })
 
 box.post('/box_page',(req,res)=>{
+  console.log(req.body);
+  
 
 
 })

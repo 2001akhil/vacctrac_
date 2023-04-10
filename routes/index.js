@@ -95,7 +95,7 @@ router.post("/login", async (req, res) => {
           {
             console.log("Data is not to be fetched")
           }
-          res.render("page", { data: sessionData });
+          res.render("page", { sessionData: sessionData });
         } else {
           let pas_werr = "password error";
           res.redirect("/", { pas_werr });
@@ -122,9 +122,12 @@ router.get('/page', verifyLogin,function(req, res) {
 router.get('/user',verifyLogin,function(req, res) {
   
   
-  let data=req.session.data.name;
- req.session.data.name=data;
-  res.render('user', {data});
+  let name_user=req.session.data.name;
+  let mob_user=req.session.data.mob;
+  let dateof_join=req.session.data.dateofjoin
+
+
+  res.render('user', {data:name_user,mobdata:mob_user,dtof:dateof_join});
   
 
 
@@ -166,7 +169,7 @@ let empid=req.session.data.emp_id;
 console.log(empname,empid);
 
  
-  res.render("front", {data:empname,data:empid});
+  res.render("front", {Sessiondata:empname,data:empid});
   
  
               
