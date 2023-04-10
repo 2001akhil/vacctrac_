@@ -122,7 +122,8 @@ router.get('/page', verifyLogin,function(req, res) {
 router.get('/user',verifyLogin,function(req, res) {
   
   
-  let data=req.session.data.data;
+  let data=req.session.data.name;
+ req.session.data.name=data;
   res.render('user', {data});
   
 
@@ -158,10 +159,14 @@ router.get('/select', function(req, res) {
 });
 
 router.get('/front',verifyLogin,function(req, res) {
-let data =req.session.data;
+
+let empname=req.session.data.name;
+let empid=req.session.data.emp_id;
+
+console.log(empname,empid);
 
  
-  res.render('front', {data:data});
+  res.render("front", {data:empname,data:empid});
   
  
               

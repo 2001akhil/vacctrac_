@@ -30,11 +30,11 @@
                     </div>
                     <div class="input-box">
                         <span class="details">Employee ID</span>
-                        <input type="text" name="empid" {{#if data}}{{#each data}}value="{{this.emp_id}}"{{/each}}{{/if}} placeholder="Enter employee ID" readonly>
+                        <input type="text" name="empid" {{#if name}}{{#each name}}value="{{this.emp_id}}"{{/each}}{{/if}} placeholder="Enter employee ID" readonly>
                     </div>
                     <div class="input-box">
                         <span class="details">Manufacturername</span>
-                        <input type="text" name="password" {{#if data}}{{#each data}}value="{{this.name}}"{{/each}}{{/if}} placeholder="Enter your password" readonly>
+                        <input type="text" name="password" {{#if empname}}{{#each empname}} value={{empname}} {{/each}}{{/if}} placeholder="Enter your password" readonly>
                     </div>
                     <div class="button1">
                         <input type="submit" value="NEXT">

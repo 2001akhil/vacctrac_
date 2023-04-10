@@ -19,15 +19,44 @@ const fs=require('fs');
 const { type } = require('os');
 const { resourceLimits } = require('worker_threads');
 var number=10;
-
+//==========================================================
+let verifyLogin=(req,res,next)=>{
+  if(req.session.loggedIn)
+  {
+    next();
+  }
+  else{
+    res.redirect('/')
+  }
+}
+//=========================================================
 
 box.get('/',(req,res)=>{
 
-  res.render('sign');
+  res.render('box/login');
+})
+box.post('/login',async(req,res)=>{
+  let box_id=req.body.email
+  let box_data=await boxid(box_id)
+  try{
+    
+
+  }
+  catch(err)
+  {
+    console.err(err);
+    res.redirect('/')
+  }
+
 })
 
 box.get('/box_page',(req,res)=>{
   res.render('box/page')
+})
+
+box.post('/box_page',(req,res)=>{
+
+
 })
 
 
