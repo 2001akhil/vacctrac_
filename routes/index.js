@@ -86,11 +86,19 @@ router.post("/login", async (req, res) => {
         if (password == data.data.pass) {
           req.session.loggedIn = true;
           req.session.data = data.data;
-          let sessionData = req.session.data;
+          let sessionData = req.session.data.name;
+          if(data)
+          {
+          console.log(sessionData+"session data fetched")
+          }
+          else
+          {
+            console.log("Data is not to be fetched")
+          }
           res.render("page", { data: sessionData });
         } else {
           let pas_werr = "password error";
-          res.redirect("/");
+          res.redirect("/", { pas_werr });
           console.log("password error");
         }
       }
@@ -114,7 +122,7 @@ router.get('/page', verifyLogin,function(req, res) {
 router.get('/user',verifyLogin,function(req, res) {
   
   
-  let data=req.session.data;
+  let data=req.session.data.data;
   res.render('user', {data});
   
 
@@ -150,10 +158,10 @@ router.get('/select', function(req, res) {
 });
 
 router.get('/front',verifyLogin,function(req, res) {
-let data=req.session.data;
-   console.log(data)
+let data =req.session.data;
+
  
-  res.render('front', {data});
+  res.render('front', {data:data});
   
  
               
