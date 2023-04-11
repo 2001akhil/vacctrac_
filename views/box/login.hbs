@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <link rel="stylesheet" href="login.css"> -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +19,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #080710;
+    background-color: #ffffff;
 }
 .background{
     width: 430px;
@@ -38,8 +37,8 @@ body{
 }
 .shape:first-child{
     background: linear-gradient(
-        #1845ad,
-        #23a2f6
+        #2bcee4,
+        #03383b
     );
     left: -80px;
     top: -80px;
@@ -47,8 +46,8 @@ body{
 .shape:last-child{
     background: linear-gradient(
         to right,
-        #ff512f,
-        #f09819
+        #022525,
+        #96e1e0
     );
     right: -30px;
     bottom: -80px;
@@ -56,7 +55,7 @@ body{
 form{
     height: 520px;
     width: 400px;
-    background-color: rgba(255,255,255,0.13);
+    background-color: rgba(0, 0, 0, 0.13);
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
@@ -69,7 +68,7 @@ form{
 }
 form *{
     font-family: 'Poppins',sans-serif;
-    color: #ffffff;
+    color: #027157;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
@@ -93,13 +92,14 @@ input{
     width: 100%;
     background-color: rgba(255,255,255,0.07);
     border-radius: 3px;
+    border-bottom: solid #027102;
     padding: 0 10px;
     margin-top: 8px;
     font-size: 14px;
     font-weight: 300;
 }
 ::placeholder{
-    color: #e5e5e5;
+    color: #000000;
 }
 button{
     margin-top: 50px;
@@ -112,35 +112,13 @@ button{
     border-radius: 5px;
     cursor: pointer;
    transition: all 0.3s ease;
-   background: linear-gradient(135deg, #ffffff, #020b0a);
+   background: linear-gradient(135deg, #ffffff, #068071);
 }
 button:hover{
   /* transform: scale(0.99); */
-  background: linear-gradient(-135deg, #030303, #000000);
+  background: linear-gradient(-135deg, #308493, #0c5f63);
   color: white;
   }
-.social{
-  margin-top: 30px;
-  display: flex;
-}
-.social div{
-  background: red;
-  width: 150px;
-  border-radius: 3px;
-  padding: 5px 10px 10px 5px;
-  background-color: rgba(255,255,255,0.27);
-  color: #eaf0fb;
-  text-align: center;
-}
-.social div:hover{
-  background-color: rgba(255,255,255,0.47);
-}
-.social .fb{
-  margin-left: 25px;
-}
-.social i{
-  margin-right: 4px;
-}
 
     </style>
 </head>
@@ -152,7 +130,7 @@ button:hover{
     <form>
         <h3>Login Here</h3>
 
-        <label for="username">Username</label>
+        <label for="boxname">Boxname</label>
         <input type="text" placeholder="Email or Phone" id="username">
 
         <label for="password">Password</label>
