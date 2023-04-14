@@ -160,6 +160,8 @@ integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5K
 </head>
 
 <body>
+    
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -186,7 +188,7 @@ integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5K
            {{sessionData}}
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="/logout">Logout</a>
+                <a id="logout-button" class="dropdown-item" style="cursor:pointer;">Logout</a>
             </div>
         </div>
         </form>
@@ -286,5 +288,16 @@ integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5K
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 </body>
+<script>
+    const logoutButton = document.getElementById('logout-button');
+
+    logoutButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        const confirmLogout = confirm(`${name}Are you sure to logout`);
+        if (confirmLogout) {
+            window.location.href = '/logout';
+        }
+    });
+</script>
 
 </html>
