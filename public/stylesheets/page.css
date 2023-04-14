@@ -237,8 +237,8 @@ h4 {
 
 button {
     margin-left: 80%;
-    height: 45px;
-    width: 150px;
+    height: 35px;
+    width: 120px;
     border-radius: 5px;
     border: none;
     color: #ffffff;
@@ -357,6 +357,7 @@ a {
         -o-transform: rotate(30deg) translate(0px, 0px);
         transform: rotate(30deg) translate(0px, 0px);
     }
+      
 
 }
 

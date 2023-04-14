@@ -33,12 +33,12 @@
                   codeReader.decodeFromCanvas(canvas, (result, error) => {
                         if (result) {
                               console.log('QR code detected:', result.text);
-                              alert(res)
+                              alert(result.text);
                               video.pause();
+
                               stream.getTracks().forEach((track) => {
                                     track.stop();
                               });
-                              result.textContent = result.text;
                         } else if (error) {
                               console.error('Error decoding QR code', error);
                         }
