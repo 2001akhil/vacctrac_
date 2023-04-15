@@ -185,7 +185,7 @@ integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5K
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-           {{sessionData}}
+           {{#if sessionData}}{{sessionData}}{{else}}<h4>Occur an error from the session handler</h4>{{/if}}
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a id="logout-button" class="dropdown-item" style="cursor:pointer;">Logout</a>

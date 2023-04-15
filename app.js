@@ -47,7 +47,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({secret:"key",cookie:{maxAge:6000000*8000+6554},resave: false,saveUninitialized: true}))
+app.use(session({secret:"key",cookie:{maxAge:6000000000*80000000+65545452*2000},resave: false,saveUninitialized: true}))
 app.use(cors());
 
 
