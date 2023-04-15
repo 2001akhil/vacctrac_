@@ -70,7 +70,7 @@ router.get('/', function(req, res) {
   }
 });
 
-router.post("/login", async (req, res) => {
+router.post('/login', async (req, res) => {
   console.log(req.body);
   var password = req.body.pasw;
   console.log(password + " from front end");
@@ -113,12 +113,19 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.get('/back',verifyLogin,(req,res)=>{
+  let data=req.session.data.name
+   res.render("page", { sessionData: data });
+
+})
+
 router.get('/page', verifyLogin,function(req, res) {
   
  let data=req.session.data;
  console.log(main)
   res.render('page', { title: 'Dashboard',data});
 });
+router.post('/page',(req,res)=>{})
 router.get('/user',verifyLogin,function(req, res) {
   
   
@@ -313,34 +320,34 @@ router.get('/history',function(req,res){
 /*<=============================M1 stop===========================================================>*/
 
 //--------------------------------------------------------------------------------------------------------------------
-router.post('/main/:machineid',(req,res)=>{
+// router.post('/main/:machineid',(req,res)=>{
 
-  let machineid=req.params.machineid
-  console.log(machineid)
+//   let machineid=req.params.machineid
+//   console.log(machineid)
 
-const table = 'sen';
+// const table = 'sen';
 
-const id = 1;
-console.log(req.body)
-const name = req.body.temperature;
-const ir1=req.body.ir1;
-const ir2=req.body.ir2;
-// const sql = `UPDATE ${table} SET temperature = ? ir1 = ? ir2 = ?  WHERE id = ?`;
+// const id = 1;
+// console.log(req.body)
+// const name = req.body.temperature;
+// const ir1=req.body.ir1;
+// const ir2=req.body.ir2;
+// // const sql = `UPDATE ${table} SET temperature = ? ir1 = ? ir2 = ?  WHERE id = ?`;
 
-// const sql = `UPDATE ${table} SET temperature = ?, ir1 = ?, ir2 = ?,machineid = ? WHERE id = ?`;
+// // const sql = `UPDATE ${table} SET temperature = ?, ir1 = ?, ir2 = ?,machineid = ? WHERE id = ?`;
 
-// db.query(sql, [name, id,ir1,ir2], (err, result) => {
-//   if (err) {
-//     console.log("Error: ", err);
-//   } else {
-//     console.log("Updated successfully");
-//   }
-// });
+// // db.query(sql, [name, id,ir1,ir2], (err, result) => {
+// //   if (err) {
+// //     console.log("Error: ", err);
+// //   } else {
+// //     console.log("Updated successfully");
+// //   }
+// // });
 
 
   
-  res.status(200).send("HI")
-})
+//   res.status(200).send("HI")
+// })
 //--------------------------------------------------------------
 
 
