@@ -21,7 +21,8 @@ var number=10;
 const verifyLogin=(req,res,next)=>{
   if(req.session.loggedIn)
   {
-   next()
+    next();
+  
   }else(res.redirect('/'))
   
 }

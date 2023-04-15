@@ -21,10 +21,11 @@
             <span class="details">Box Name</span>
 <select name="box" id="box">
   <option value="select">select an option</option>
-  <option></option>
-  <option></option>
-  <option></option>
-  <option></option>
+  {{#if box}}
+ <option>{{box}}</option>
+ {{else}}
+ <option></option>
+ {{/if}}
 </select>
           </div>
           <div class="input-box">
@@ -48,4 +49,11 @@
      
 
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.container').hide().fadeIn(1000);
+  });
+</script>
+
 </html>
