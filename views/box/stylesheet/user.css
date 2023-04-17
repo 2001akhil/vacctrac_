@@ -1,18 +1,22 @@
+body{
+  background-color: #b3cde0;
+}
+
 h3.user_profile{
     margin-top: 5%;
     margin-left: -8%; 
-    color: #276678;
+    color: #121414;
     font-family: 'Times New Roman', Times, serif;
     align-items: center;
     margin-left: 200px;
   }
   .user-profile {
-      background-color: #276678;
+      background-color: #005b96;
       max-width: 600px;
       margin: 50px auto;
       padding: 20px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      color: #D3E0EA;
+      color: #dde6ec;
     }
     .user-details {
       display: flex;
@@ -26,7 +30,7 @@ h3.user_profile{
       font-weight: bold;
       width: 150px;
       margin-right: 50px;
-      color: #D3E0EA;
+      color: #dde6ec;
     }
 
     .user-details span {
