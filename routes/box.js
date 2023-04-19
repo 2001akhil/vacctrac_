@@ -49,7 +49,7 @@ box.post('/login',async(req,res)=>{
           req.session.loggedIn=true;
           req.session.data=box_data.data;
           
-           res.redirect('/page',{manu:true})
+           res.redirect('/page')
 
         }
         else
@@ -76,7 +76,7 @@ box.post('/login',async(req,res)=>{
 })
 
 box.get('/box_page',(req,res)=>{
-  res.render('box/page')
+  res.render('box/index')
 })
 
 box.post('/box_page',(req,res)=>{
