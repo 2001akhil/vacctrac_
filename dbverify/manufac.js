@@ -17,7 +17,7 @@ module.exports={
                   else{
                         if(result.length>0)
                         {
-                             resolve({data:result,message:"Datafetched"})
+                             resolve({data:result[0].flag,message:"Datafetched"})
                             
                              
                              
@@ -35,6 +35,8 @@ module.exports={
   },
   data_replace:(fetch_front)=>{
       return new promise((resolve,reject)=>{
+
+            
 
       })
   }
