@@ -14,7 +14,7 @@ const { type } = require('os');
 const { resourceLimits } = require('worker_threads');
 const checkMail = require('../dbverify/manufacturer');
 var number=10;
-const helper=require('../dbverify/manufac')
+const manufac=require('../dbverify/manufac')
 
 /* GET home page. */
 
@@ -174,31 +174,32 @@ router.get('/front',verifyLogin,function(req, res) {
 
 let empname=req.session.data.name;
 let empid=req.session.data.emp_id;
-helper.vaccine_fetch().then((data)=>{
-  console.log(data.data)
-
+manufac.vaccine_fetch().then((data)=>{
   res.render("front", { Sessiondata: empname, data: empid,vaccine:data.data});
 })
 .catch((err)=>{
   console.log(err)
-})
-
-
- 
- 
-  
- 
+}) 
               
    })
-   router.get('/history',verifyLogin,(req,res)=>{
-    res.render('history')
-   })
+
+
+  
    
 
 router.post('/front',(req,res)=>{
+  const box_details = [
+    [
+      req.body.name,
+      req.body.boxid,
+      req.body.empid,
+      req.body.password,
+      req.body.vaccine,
+    ],
+  ];
 
+  manufac.data_replace(box_details[4]).then(() => {}).catch((err) => { console.log(err);});
   
-  const box_details=[[req.body.name,req.body.boxid,req.body.empid,req.body.password]]
   var sql =`INSERT INTO med (box_name,BOX_id,Emp_id,emp_n) VALUES ?`
   db.query(sql,[box_details],(err,result)=>{
   if(err)
@@ -220,6 +221,9 @@ router.post('/front',(req,res)=>{
 
 
 });
+ router.get("/history", verifyLogin, (req, res) => {
+   res.render("history");
+ });
 router.get('/vaccine_dt',verifyLogin,(req,res)=>{
   
  let data=req.session.data;
