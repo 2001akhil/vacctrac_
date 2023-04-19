@@ -14,6 +14,7 @@ const { type } = require('os');
 const { resourceLimits } = require('worker_threads');
 const checkMail = require('../dbverify/manufacturer');
 var number=10;
+const helper=require('../dbverify/manufac')
 
 /* GET home page. */
 
@@ -173,6 +174,13 @@ router.get('/front',verifyLogin,function(req, res) {
 
 let empname=req.session.data.name;
 let empid=req.session.data.emp_id;
+let name
+helper.vaccine_fetch().then((data)=>{
+ console.log(data.data);
+})
+.catch((err)=>{
+  console.log(err)
+})
 
 console.log(empname,empid);
 
