@@ -4,6 +4,7 @@
 <head>
       <meta charset="UTF-8">
       <link rel="stylesheet" href="stylesheets/user.css">
+
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
@@ -26,8 +27,7 @@
                   <div class="row gx-3 mb-3">
                         <div class="col-md-6">
                               <label class="small mb-1" for="inputOrgName">Mobile Number</label>
-                              <input class="form-control"{{#if data}}{{#each data}}value="{{this.mob}}"{{/each}}{{/if}} id="inputnum" type="text"
-                                    placeholder="Enter your mobile number">
+                              <input class="form-control"{{#if data}}{{#each data}}value="{{this.mob}}"{{/each}}{{/if}} id="inputnum" type="text" placeholder="Enter your mobile number">
                         </div>
                         <div class="col-md-6">
                               <label class="small mb-1" for="inputLocation">Location</label>
@@ -48,10 +48,11 @@
                         </div>
                   </div>
                   <div>
-                        <button class="primary" type="button"><a href="page.html">Save changes</button>
+                        {{!-- <button class="primary" type="button"><a href="page.html">Save changes</button> --}}
                   </div>
-                  <div>
-                        <button class="button2" type="button"><a href="page.html">GO BACK</button>
+                  <div class="button-container">
+                        <input type="button" class="button2" value="GO BACK" onclick="window.location.href='/back'">
+                        <input type="button" class="button2" value="SAVE CHANGES" onclick="window.location.href='/back'">
                   </div>
             </form>
       </div>

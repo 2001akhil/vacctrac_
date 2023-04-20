@@ -1,11 +1,13 @@
 body {
     height: 100vh;
+    position: relative;
     /* display: flex; */
     justify-content: center;
     align-items: center;
     /* padding: 10px; */
     overflow: hidden;
     background: linear-gradient(135deg, #01322e, #2c8077);
+    z-index: initial;
 }
 
 .img-account-profile {
@@ -37,12 +39,38 @@ a {
     margin-left: 69%;
     font-size: 18px;
     font-weight: 500;
+    font-size: medium;
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
     background: linear-gradient(135deg, #4ac5ba, #06201e);
+    margin-top: 15px;
+    
+   
 }
 
+@media only screen and (max-width: 600px) {
+    .button2 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .button2 {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        width: 100%;
+        font-size: 16px;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .button2 {
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+}
 .card .card-header {
     font-weight: 100;
     color: white;
@@ -97,4 +125,34 @@ h4 {
     font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
     font-size: x-large;
+}
+.button-container {
+    position: absolute;
+    /* justify-content: space-between; */
+    padding-left: 480px;
+    margin-top: 30px;
+    left: 12%;
+    right: 12%;
+    margin: auto;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .button-container {
+        padding-left: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .button-container {
+        padding-left: 200px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .button-container {
+        padding-left: 350px;
+    }
 }
