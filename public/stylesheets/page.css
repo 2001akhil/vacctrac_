@@ -21,7 +21,8 @@ h4 {
     width: 200px;
     height: 173.20508px;
     float: left;
-    margin-left: -29px;
+    left: 10%;
+    margin-left: 35px;
     z-index: 0;
     position: relative;
     -webkit-transform: rotate(30deg);
