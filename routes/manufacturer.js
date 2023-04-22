@@ -198,7 +198,10 @@ router.post('/front',(req,res)=>{
     ],
   ];
 
-  manufac.data_replace(box_details[4]).then(() => {}).catch((err) => { console.log(err);});
+  manufac.data_replace(box_details[0][4]).then(() => {})
+    .catch((err) => {
+      console.log(err);
+    });
   
   var sql =`INSERT INTO med (box_name,BOX_id,Emp_id,emp_n) VALUES ?`
   db.query(sql,[box_details],(err,result)=>{
