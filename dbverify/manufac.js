@@ -9,8 +9,8 @@ var array=[];//temporary hold the inactive status from the different session
 module.exports={
       details:(session)=>{
             return new promise(async(resolve,reject)=>{
-        let sql="select name from login"
-        db.query(sql,(err,result)=>{
+        let sql="select name from login where name=?"
+        db.query(sql,session,(err,result)=>{
             if(err){
                   reject(err);
             }else{
@@ -97,7 +97,7 @@ module.exports={
       })
   },
  savechanges:(changes)=>{
-      db.query("update login set email=? where name=? and email=? and phone=?",[changes],(err,result)=>{
+      db.query("update login set name=? where name=? and email=? and phone=?",[changes],(err,result)=>{
             return new promise((resolve,reject)=>{
                   if(err){
                         reject(err);
