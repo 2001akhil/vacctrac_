@@ -15,7 +15,7 @@ const { resourceLimits } = require('worker_threads');
 const checkMail = require('../dbverify/manufacturer');
 var number=10;
 const manufac=require('../dbverify/manufac')
-const routeshandler=require('../Routeshandler/manufacturer')
+
 
 /* GET home page. */
 
@@ -131,7 +131,12 @@ router.get('/page', verifyLogin,function(req, res) {
 router.post('/page',(req,res)=>{})
 router.get('/user',verifyLogin,function(req, res) {
   
-  
+  manufac.details(req.session.data.name).then((data)=>{
+    console.log(data);
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
   let name_user=req.session.data.name;
   let mob_user=req.session.data.mob;
   let dateof_join=req.session.data.dateofjoin
@@ -143,7 +148,20 @@ router.get('/user',verifyLogin,function(req, res) {
 
 });
 
-router.post("/changes_user", routeshandler.savechanges);
+router.post("/changes_user",(req,res)=>{
+  var name_user={};
+  manufac.details().then((data)=>{
+    name_user=data.data;
+  })
+  let data=[[req.body.username,req.body.email,req.body,name_user]]
+  manufac.savechanges(data).then((data)=>{
+    console.log(data)
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+
+});
 
 router.get('/next',verifyLogin,function(req, res) {
   

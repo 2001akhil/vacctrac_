@@ -7,6 +7,26 @@ var array=[];//temporary hold the inactive status from the different session
 
 /*Author:akhil*/
 module.exports={
+      details:(session)=>{
+            return new promise(async(resolve,reject)=>{
+        let sql="select name from login"
+        db.query(sql,(err,result)=>{
+            if(err){
+                  reject(err);
+            }else{
+                  if(result.length>0){
+                        resolve({data:result[0].name,message:"Data fetched"})
+                  }
+                  else{
+                        resolve({data:"no data",message:"NO data"})
+                  }
+                  
+            }
+
+
+        })
+            })
+      },
   
   vaccine_fetch:()=>{
       return new promise(async(resolve,reject)=>{
@@ -75,6 +95,25 @@ module.exports={
 
             })
       })
-  }
+  },
+ savechanges:(changes)=>{
+      db.query("update login set email=? where name=? and email=? and phone=?",[changes],(err,result)=>{
+            return new promise((resolve,reject)=>{
+                  if(err){
+                        reject(err);
+                  }
+                  else{
+                        if(result.length>0)
+                        {
+                              resolve({data:result,message:"datafetched"});
+                        }
+                        else{
+                              resolve({data:"no data",message:"datacan't be fetched"})
+                        }
+                  }
+            })
+      })
+
+ }
 
 }
