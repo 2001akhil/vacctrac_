@@ -1,7 +1,8 @@
 const { promises } = require("fs")
 const { resolve } = require("path")
 const promise=require('promise')
-var db=require('../dbconnector/connection')
+var db=require('../dbconnector/connection');
+const { Namespace } = require("socket.io");
 var array=[];//temporary hold the inactive status from the different session
 
 /*Author:akhil*/
@@ -55,6 +56,24 @@ module.exports={
             
             
 
+      })
+  },
+  data_update:()=>{
+      return new promise((resolve,reject)=>{
+            db.query(`update login set name=? where email=?`,[name,email],(err,result)=>{
+                  if(err){
+                        reject(console.log(err))
+                  }
+                  else{
+                        if (result.length > 0){
+                          resolve({ data: result, message: "Data accessed" });
+                  }
+                  else{
+                        resolve({data:"NO data",message:"fetch some error"})
+                  }
+            }
+
+            })
       })
   }
 

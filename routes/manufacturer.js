@@ -15,6 +15,7 @@ const { resourceLimits } = require('worker_threads');
 const checkMail = require('../dbverify/manufacturer');
 var number=10;
 const manufac=require('../dbverify/manufac')
+const routeshandler=require('../Routeshandler/manufacturer')
 
 /* GET home page. */
 
@@ -141,9 +142,8 @@ router.get('/user',verifyLogin,function(req, res) {
 
 
 });
-router.post('/user',(req,res)=>{
 
-})
+router.post("/changes_user", routeshandler.savechanges);
 
 router.get('/next',verifyLogin,function(req, res) {
   
