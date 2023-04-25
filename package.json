@@ -42,5 +42,6 @@
   "bugs": {
     "url": "https://github.com/2001akhil/vacctrac_/issues"
   },
-  "homepage": "https://github.com/2001akhil/vacctrac_#readme"
+  "homepage": "https://github.com/2001akhil/vacctrac_#readme",
+  "devDependencies": {}
 }

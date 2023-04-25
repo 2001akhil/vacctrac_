@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 const cors=require("cors")
 var hbs=require('express-handlebars')
 
-var indexRouter = require("./routes");
+var indexRouter = require("./routes/index");
 var usersRouter = require('./routes/box');
 
 
