@@ -150,7 +150,7 @@ manufac.vaccine_fetch().then((data)=>{res.render("front", { Sessiondata: empname
 
 
 router.post("/front", verifyLogin, async (req, res) => {
-  req.session=true;
+
   const sessionData = req.session.data.name;
   const box_details = [
     [
@@ -162,7 +162,7 @@ router.post("/front", verifyLogin, async (req, res) => {
     ],
   ];
   manufac.createDb(req.body.box).then((data) => {console.log(data);}).catch((err) => {console.log(err);});
-  await manufac.front(box_details).then((response) => {console.log(response.message);req.session.box_name = req.body.box;res.redirect("/vaccine");}).catch((err) => {console.log(err);res.redirect("/front");});
+  await manufac.front(box_details).then((response) => {console.log(response.message);req.session.box_name = req.body.box; res.redirect("/vaccine");}).catch((err) => {console.log(err);res.redirect("/front");});
 });
 
 router.get("/vaccine", verifyLogin, (req, res) => {
@@ -170,11 +170,10 @@ router.get("/vaccine", verifyLogin, (req, res) => {
   res.render("vaccine");
 });
 router.post('/vaccine',async(req,res)=>{
-  req.session=true;
   const box_name = req.session.box_name;
   console.log(box_name);
 let data=[[req.body.name,req.body.id1,req.body.dob,req.body.dobb]];
-await manufac_final.box(box_name,data).then((data)=>{console.log(data.message);res.redirect('/page')}).catch((err)=>{console.log(err);res.redirect('/vaccine')})
+await manufac_final.box(box_name,data).then((data)=>{console.log(data.message);res.redirect('/back')}).catch((err)=>{console.log(err);res.redirect('/vaccine')})
 
 })
 
