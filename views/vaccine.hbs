@@ -39,28 +39,28 @@
             
                   <div class="formbold-mb-3">
                         <label for="name" class="formbold-form-label"> Name of the Vaccine </label>
-                        <input type="text" name="name" id="name" {{#if details}}{{#each details}}value="{{this.vaccinename}}"" {{/each}}{{else}} value="" {{/if}}class="formbold-form-input" readonly/>
+                        <input type="text" name="name" id="name" {{#if details}}{{#each details}}value="{{this.vaccinename}}"" {{/each}}{{else}} value="" {{/if}}class="formbold-form-input"/>
                   </div>
 
                   <div class="formbold-mb-31">
                         <label for="id1" class="formbold-form-label"> Vaccine ID </label>
-                        <input type="text" name="id1" id="id1" {{#if details}}{{#each details}}value="{{this.Vaccine_id}}"{{/each}}{{else}}value="" {{/if}} class="formbold-form-input" readonly />
+                        <input type="text" name="id1" id="id1" {{#if details}}{{#each details}}value="{{this.Vaccine_id}}"{{/each}}{{else}}value="" {{/if}} class="formbold-form-input"/>
                   </div>
 
                   <div class="formbold-mb-32">
                         <label for="dob" class="formbold-form-label"> Date of Manufacturing </label>
-                        <input type="text" name="dob" id="dob" {{#if details}}{{#each details}} value="{{this.Manufact_d}}"{{/each}} {{else}} value=""{{/if}} class="formbold-form-input" readonly/>
+                        <input type="text" name="dob" id="dob" {{#if details}}{{#each details}} value="{{this.Manufact_d}}"{{/each}} {{else}} value=""{{/if}} class="formbold-form-input"/>
                   </div>
 
                   <div class="formbold-mb-33">
                         <label for="dobb" class="formbold-form-label"> Date of Expiry </label>
-                        <input type="text" name="dobb" id="dobb" {{#if details}}{{#each details}}value="{{this.Expiry_d}}"{{else}}{{/each}} value=""{{/if}} class="formbold-form-input" readonly/>
+                        <input type="text" name="dobb" id="dobb"   class="formbold-form-input"/>
                   </div>
 
                   <div class="formbold-mb-34">
                         <label for="temp" class="formbold-form-label"> Temperature(in degrees) </label>
 
-                        <input type="text" {{#if re}}{{#each re}} value="{{this.temperature}}" {{/each}}{{/if}} id="temp" class="formbold-form-input formbold-mb-3" readonly />
+                        <input type="text" value="{{this.temperature}}"  id="temp" class="formbold-form-input formbold-mb-3"/>
                   </div>
                   <button class="formbold-btn">Submit</button>
                  

@@ -11,7 +11,7 @@
   
   <div class="container">
     <div class="content">
-      <form action="#">
+      <form action="/front" method="post">
         <div class="button2">
           
             <input  type="button" value="GO BACK" onclick="window.location.href='/back'">
@@ -20,7 +20,7 @@
           <div class="input-box">
             <span class="details">Box Name</span>
 <select name="box" id="box">
-  <option value="select" name="vaccine">select an option</option>
+  <option value="select">select an option</option>
   {{#if vaccine}}
  <option>{{vaccine}}</option>
  {{else}}
@@ -30,15 +30,15 @@
           </div>
           <div class="input-box">
             <span class="details">Box ID</span>
-            <input type="text" placeholder="Enter Box ID" required>
+            <input type="text" name="boxid" placeholder="Enter Box ID" required>
           </div>
           <div class="input-box">
             <span class="details">Employee ID</span>
-            <input type="text" value="{{data}}" placeholder="Enter employee ID" required>
+            <input type="text" name="empid" value="{{data}}" placeholder="Enter employee ID" required>
           </div>
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
+            <input type="text" name="password" placeholder="Enter your password" required>
           </div>
         <div class="button1">
           <input type="submit" value="NEXT">

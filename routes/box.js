@@ -74,17 +74,12 @@ box.post('/login',async(req,res)=>{
   }
 
 })
-
-box.get('/box_page',(req,res)=>{
-  res.render('box/index')
-})
-
-box.post('/box_page',(req,res)=>{
-  console.log(req.body);
-  
+box.get("/box_page", (req, res) => {
+  res.render("box/home_box");
+});
 
 
-})
+
 
 
 

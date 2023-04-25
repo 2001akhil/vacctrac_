@@ -96,10 +96,12 @@ form .input-box span.details{
    background: #9b59b6;
    border-color: #d9d9d9;
  }
- form .button1{
+ form.button1{
+  
    height: 45px;
    margin: 35px 980px;
    width: 200px;
+   
  }
  form .button2{
     height: 45px;
@@ -118,6 +120,7 @@ form .input-box span.details{
    cursor: pointer;
    transition: all 0.3s ease;
    background: linear-gradient(135deg, #4ac5ba, #06201e);
+  
  }
  form .button2 input{
     height: 100%;
@@ -197,3 +200,4 @@ form .user-details .input-box{
     flex-direction: column;
   }
 }
+

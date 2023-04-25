@@ -17,6 +17,7 @@
     "express-handlebars": "^7.0.6",
     "express-session": "^1.17.3",
     "fs": "^0.0.1-security",
+    "google-location-sharing": "^2.0.0",
     "hbs": "^4.2.0",
     "http-errors": "~1.6.3",
     "mongoclient": "^1.0.3",
@@ -24,6 +25,8 @@
     "mongoose": "^7.0.1",
     "morgan": "~1.9.1",
     "mysql": "^2.18.1",
+    "node-gpsd": "^0.3.4",
+    "nodemailer": "^6.9.1",
     "nodemon": "^2.0.22",
     "promise": "^8.3.0",
     "socket.io": "^4.6.1"
