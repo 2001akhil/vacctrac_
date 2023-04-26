@@ -12,6 +12,7 @@
     "consolidate": "^0.16.0",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
+    "date-and-time": "^3.0.0",
     "debug": "~2.6.9",
     "express": "^4.18.2",
     "express-handlebars": "^7.0.6",
@@ -42,6 +43,5 @@
   "bugs": {
     "url": "https://github.com/2001akhil/vacctrac_/issues"
   },
-  "homepage": "https://github.com/2001akhil/vacctrac_#readme",
-  "devDependencies": {}
+  "homepage": "https://github.com/2001akhil/vacctrac_#readme"
 }

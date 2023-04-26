@@ -3,9 +3,10 @@ var express = require('express');
 var router = express.Router();
 var db=require('../dbconnector/connection')
 const checkMail = require("../manufacturer/manufacturer_login");
-var number=10;
+const sessionname=require("../manufacturer/sessioncount")
 const manufac = require("../manufacturer/manufac");
 const manufac_final = require("../manufacturer/boxfinal");//final stage
+const session = require('express-session');
 
 
 /* GET home page. */
@@ -70,6 +71,7 @@ router.post('/login', async (req, res) => {
           req.session.loggedIn = true;
           req.session.data = data.data;
           let sessionData = req.session.data.name;
+          sessionname.count(sessionData).then((data)=>(console.log(data))).catch((err)=>{console.log(err)})
           if(data)
           {
           console.log(sessionData+"session data fetched")
@@ -127,14 +129,19 @@ router.get('/user',verifyLogin,function(req, res) {
 });
 router.post("/user", (req, res) => {
   // res.render("user");
-  
+
     let session = req.session.data.emp_id;
     let data_user = [
-      [req.body.mob, req.body.email, req.body.empid,session],
+      [req.body.mob, req.body.email]
     ];
-    manufac.data_update(data_user).this((data) => {console.log(data);res.render("user");}).catch((err) => {console.log(err);});
-  
+    try{
+    manufac.data_update(data_user,session).then((data) => {console.log(data);res.redirect("/user");}).catch((err) => {console.log(err);});
+    }
+    catch(err){
+      console.error(err);
+      res.redirect('/user')
 
+    }
 });
 
 
@@ -152,6 +159,7 @@ manufac.vaccine_fetch().then((data)=>{res.render("front", { Sessiondata: empname
 router.post("/front", verifyLogin, async (req, res) => {
 
   const sessionData = req.session.data.name;
+  console.log(sessionData)
   const box_details = [
     [
       req.body.box,
@@ -166,7 +174,6 @@ router.post("/front", verifyLogin, async (req, res) => {
 });
 
 router.get("/vaccine", verifyLogin, (req, res) => {
-  
   res.render("vaccine");
 });
 router.post('/vaccine',async(req,res)=>{
@@ -192,6 +199,8 @@ router.get("/back", verifyLogin, (req, res) => {
 });
 
 router.get('/logout',(req,res)=>{
+  let sessionname=req.session.data.name
+   sessionname.update_status(sessionname).then((data)=>{console.log(data)}).catch((err)=>{console.log(err)})
    req.session.destroy()
     res.redirect('/')
 })
@@ -224,6 +233,8 @@ router.get('/logout',(req,res)=>{
 router.get("/box_page",(req, res) => {
   res.render("box/home_box");
 });
+
+
 
 
 module.exports = router;

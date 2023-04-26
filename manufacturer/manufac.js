@@ -10,7 +10,7 @@ var array = []; //temporary hold the inactive status from the different session
 module.exports = {
   vaccine_fetch: () => {
     return new promise(async (resolve, reject) => {
-      let sql = `select * from machine_name where flag="inactive"`;
+      let sql = `select * from machine_name where flag="inactive" and status="on"`;
       await db.query(sql, (err, result) => {
         if (err) {
           reject(console.log(err));
@@ -41,11 +41,11 @@ module.exports = {
       });
     });
   },
-  data_update: (changes) => {
-    
+  data_update: (changes,empid) => {
+    console.log(changes)
     return new Promise(async (resolve, reject) => {
       await db.query(
-        `UPDATE login SET name=?, email=?, mob=? WHERE emp_id=?`,
+        `UPDATE login SET name=?, email=?, mob=? WHERE emp_id=${empid}`,
         [changes.name, changes.email, changes.mob, changes.empid],
         (err, result) => {
           if (err) {
@@ -60,7 +60,9 @@ module.exports = {
         }
       );
     });
+    
   },
+  
 
   front:(data)=>{
     //console.log(data)
