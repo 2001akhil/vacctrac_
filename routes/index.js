@@ -199,10 +199,18 @@ router.get("/back", verifyLogin, (req, res) => {
 });
 
 router.get('/logout',(req,res)=>{
-  let sessionname=req.session.data.name
-   sessionname.update_status(sessionname).then((data)=>{console.log(data)}).catch((err)=>{console.log(err)})
-   req.session.destroy()
-    res.redirect('/')
+  
+  try{
+    let sessionname = req.session.data.name;
+   console.log(sessionname);
+    sessionname.update_status(sessionname).then((data)=>{console.log(data);req.session.destroy(); res.redirect("/");}).catch((err)=>{console.log(err)})
+  }
+  catch(err)
+  {
+    req.session.destroy()
+   res.redirect("/");
+  }
+    
 })
 //==
 //error
