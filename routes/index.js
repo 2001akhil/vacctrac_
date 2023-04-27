@@ -71,16 +71,9 @@ router.post('/login', async (req, res) => {
           req.session.loggedIn = true;
           req.session.data = data.data;
           let sessionData = req.session.data.name;
-          sessionname.count(sessionData).then((data)=>(console.log(data))).catch((err)=>{console.log(err)})
-          if(data)
-          {
-          console.log(sessionData+"session data fetched")
-          }
-          else
-          {
-            console.log("Data is not to be fetched")
-          }
-          res.render("page", { sessionData: sessionData});
+          // module.exports = { sessionData: sessionData };
+             sessionname.count(sessionData).then((data)=>{console.log(data.data); res.render("page", { sessionData: sessionData });}).catch((err)=>console.log(err))
+                 
         } else {
           let pas_werr = "password error";
           res.redirect("/", { pas_werr });
@@ -168,7 +161,7 @@ router.post("/front", verifyLogin, async (req, res) => {
       req.body.password,
       sessionData,
     ],
-  ];
+  ]; 
   manufac.createDb(req.body.box).then((data) => {console.log(data);}).catch((err) => {console.log(err);});
   await manufac.front(box_details).then((response) => {console.log(response.message);req.session.box_name = req.body.box; res.redirect("/vaccine");}).catch((err) => {console.log(err);res.redirect("/front");});
 });
@@ -199,17 +192,19 @@ router.get("/back", verifyLogin, (req, res) => {
 });
 
 router.get('/logout',(req,res)=>{
+  req.session.destroy(); 
+  res.redirect("/");
   
-  try{
-    let sessionname = req.session.data.name;
-   console.log(sessionname);
-    sessionname.update_status(sessionname).then((data)=>{console.log(data);req.session.destroy(); res.redirect("/");}).catch((err)=>{console.log(err)})
-  }
-  catch(err)
-  {
-    req.session.destroy()
-   res.redirect("/");
-  }
+  // try{
+  //   let sessionname = req.session.data.name;
+  //  console.log(sessionname);
+  //   sessionname.update_status(sessionname).then((data)=>{console.log(data);}).catch((err)=>{console.log(err)})
+  // }
+  // catch(err)
+  // {
+  //   req.session.destroy()
+  //  res.redirect("/");
+  // }
     
 })
 //==

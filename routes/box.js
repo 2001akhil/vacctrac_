@@ -74,23 +74,27 @@ box.post('/login',async(req,res)=>{
   }
 
 })
-box.get("/box_page", (req, res) => {
-  res.render("box/home_box");
-});
-box.post('/data',(req,res)=>{
-  const{name,email}=req.body;
-   console.log(`${name}`)
-   console.log(`${email}`) 
-   // process the data here
-   res.send({ message: "Data received successfully." });
+// box.get("/box_page", (req, res) => {
+//   res.render("box/home_box");
+// });
+// box.post('/data',(req,res)=>{
+//   const{name,email}=req.body;
+//    console.log(`${name}`)
+//    console.log(`${email}`) 
+//    // process the data here
+//    res.send({ message: "Data received successfully." });
  
    
-})
+// })
 
 
-box.get('/canvas',(req,res)=>{
-  const data = { message: "Hello world" };
-  res.send(data);  
+// box.get('/canvas',(req,res)=>{
+//   const data = { message: "Hello world" };
+//   res.send(data);  
+// })
+
+box.get('/home',(req,res)=>{
+  res.redirect('box/home_box')
 })
 
 
