@@ -29,13 +29,17 @@ module.exports = {
   count_entries:(sessionname)=>{
       return new promise((resolve, reject) => {
             db.query("SELECT COUNT(*) AS total_entries FROM sessioncount where name=?",[sessionname],(err,result)=>{
+                  if(err){
+                        console.log(err)
+
+                  }else
                   if(result.length>0){
-                        resolve({result:data,message:'data here'});
+                        resolve({result:data,message:'data here',status:"SET"});
                         
 
                   }
                   else{
-                        resolve({result:"nodata",message:"error"});
+                        resolve({result:"nodata",message:"error",status:"NOTSET"});
                         
                   }
             });
