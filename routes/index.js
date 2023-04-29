@@ -72,9 +72,8 @@ router.post('/login', async (req, res) => {
           req.session.data = data.data;
           let sessionData = req.session.data.name;
           // module.exports = { sessionData: sessionData };
-            
-            //  sessionname.count_entries().then((data)=>{console.log(data.data);count=data.data}).catch((err)=>{console.log(err)})
-             sessionname.count(sessionData).then((data)=>{console.log(data); res.render("page", { sessionData: sessionData });}).catch((err)=>console.log(err))
+             sessionname.count(sessionData).then((data)=>{console.log(data); }).catch((err)=>console.log(err))
+              sessionname.count_entries(sessionData).then((data)=>{console.log(data.data);res.render("page", { sessionData: sessionData,data:data.data });}).catch((err)=>{console.log(err)})
                  
         } else {
           let pas_werr = "password error";

@@ -15,7 +15,7 @@ module.exports = {
       console.log(data);
      await db.query("INSERT INTO sessioncount (name,status,date,time) VALUES ?",[data],(err, result) => {
             if (err) {reject(console.log(err));} 
-            else { if (result.affectedRows > 0) 
+            else { console.log(result); if (result.affectedRows > 0) 
                  { resolve({ data: result, message: "inserted" });
             } else {
               resolve({ data: "NO inserted", message: "ERROR" });
@@ -32,9 +32,10 @@ module.exports = {
                   if(err){
                         console.log(err)
 
-                  }else
+                  }else{ //console.log(result)
                   if(result.length>0){
-                        resolve({result:data,message:'data here',status:"SET"});
+                        resolve({data:result[0].total_entries,message:'data here',status:"SET"});
+                        
                         
 
                   }
@@ -42,6 +43,7 @@ module.exports = {
                         resolve({result:"nodata",message:"error",status:"NOTSET"});
                         
                   }
+                }
             });
             
       })
