@@ -3,7 +3,7 @@ var db = require("../dbconnector/connection");
 
 const checkMail = (email) => {
   return new Promise((resolve, reject) => {
-    let sql = "select * from login where email = ?";
+    let sql = "select * from login where emp_id = ?";
     db.query(sql, [email], (err, result) => {
 
       if (err) {
