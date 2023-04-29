@@ -12,14 +12,26 @@ const session = require('express-session');
 /* GET home page. */
 
 // m1 start
+//====middleware
 const verifyLogin=(req,res,next)=>{
   if(req.session.loggedIn)
   {
+    
     next();
   
   }else(res.redirect('/'))
   
 }
+//,
+const typereqbody=(req,next)=>{
+  console.log(typeof req.body);
+  console.log(req.body);
+  next()
+}
+
+
+//===============================
+
 router.get('/signup',function(req,res){
  res.render('signup')
 })
@@ -182,7 +194,7 @@ await manufac_final.box(box_name,data).then((data)=>{console.log(data.message);r
    res.render("history");
  });
 router.post('/history',(req,res)=>{
-req.session=true;
+
 })
 
 //============================================================================
