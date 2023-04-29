@@ -6,6 +6,10 @@
       <link rel="stylesheet" href="stylesheets/history.css">
       <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
@@ -21,9 +25,12 @@
                   <div>
                         <span class="title">History</span>
                   </div>
-                  <div class="btn">
+                  {{!-- <div class="btn">
                         <button><a href="/back">GO BACK</a></button>
-                  </div>
+                  </div> --}}
+                  
+                  <input type="button" class="button my-button" value="GO BACK" onclick="window.location.href='/back'">
+                  
             </nav>
 
             <div class="home-content">
@@ -34,65 +41,64 @@
                                     <ul class="details">
                                           <li class="topic">Date</li>
                                           <li>02 Jan 2021</li>
-                                          <li>02 feb 2021</li>
-                                          <li>02 oct 2021</li>
-                                          <li>02 feb 2021</li>
-                                          <li>02 may 2021</li>
-                                          <li>02 may 2021</li>
-                                          <li>02 may 2021</li>
-                                          <li>02 nov 2021</li>
-                                          <li>02 sep 2021</li>
+
                                     </ul>
                                     <ul class="details">
                                           <li class="topic">BOX ID</li>
                                           <li>A12</li>
-                                          <li>B23</li>
-                                          <li>D25</li>
-                                          <li>A35</li>
-                                          <li>P55</li>
-                                          <li>A12</li>
-                                          <li>B33</li>
-                                          <li>G22</li>
-                                          <li>C31</li>
+
                                     </ul>
                                     <ul class="details">
                                           <li class="topic">VACCINE ID</li>
                                           <li>2098</li>
-                                          <li>1102</li>
-                                          <li>1112</li>
-                                          <li>1032</li>
-                                          <li>1425</li>
-                                          <li>1055</li>
-                                          <li>1402</li>
-                                          <li>1111</li>
-                                          <li>1002</li>
                                     </ul>
                                     <ul class="details">
                                           <li class="topic">Vaccine name</li>
                                           <li>COVAXIN</li>
-                                          <li>COVISHIELD</li>
-                                          <li>COVAXIN</li>
-                                          <li>COVISHIELD</li>
-                                          <li>COVAXIN</li>
-                                          <li>COVAXIN</li>
-                                          <li>COVISHIELD</li>
-                                          <li>COVAXIN</li>
-                                          <li>COVISHIELD</li>
+
                                     </ul>
                                     <ul class="details">
                                           <li class="topic">Status</li>
                                           <li>Delivered</li>
-                                          <li>Delivered</li>
-                                          <li>Returned</li>
-                                          <li>Delivered</li>
-                                          <li>Delivered</li>
-                                          <li>Returned</li>
-                                          <li>Delivered</li>
-                                          <li>Delivered</li>
-                                          <li>Delivered</li>
                                     </ul>
                               </div>
       </section>
+      
 </body>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+      $(document).ready(function () {
+            $('.r-sales').hide().fadeIn(1500);
+      });
+</script>
+
+<script>
+      $(document).ready(function () {
+            $('.title').hide().slideDown(1000); 
+      });
+</script>
+<script>
+      $(document).ready(function () {
+            $('.my-button').click(function () {
+                  $(this).fadeOut(500); // Fade out the button over 0.5 seconds when clicked
+            });
+      });
+</script>
+
+
+
 
 </html>
+
+

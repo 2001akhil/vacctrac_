@@ -137,8 +137,21 @@ a {
       font-size: 18px;
       font-weight: 500;
 }
+@media (max-width: 767px) {
 
-button {
+  a {
+    font-size: 16px; 
+  }
+}
+
+@media (min-width: 768px) {
+ 
+  a {
+    font-size: 18px;
+  }
+}
+
+.button {
       height: 50px;
       width: 130px;
       border-radius: 5px;
@@ -146,4 +159,18 @@ button {
       transition: all 0.3s ease;
       background: linear-gradient(135deg, #4ac5ba, #06201e);
       margin-top: 10px;
+}
+
+
+@media (max-width: 767px) {
+  .button {
+    width: 100%; 
+  }
+}
+
+@media (min-width: 768px) {
+  
+  .button {
+    width: 130px; 
+  }
 }
