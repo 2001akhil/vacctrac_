@@ -96,11 +96,11 @@ form .input-box span.details{
    background: #9b59b6;
    border-color: #d9d9d9;
  }
- form.button1{
+ form .button1{
   
    height: 45px;
-   margin: 35px 980px;
-   width: 200px;
+   margin: 35px 520px;
+   width: 60px;
    
  }
  form .button2{
