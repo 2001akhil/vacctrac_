@@ -133,22 +133,22 @@ router.get('/user',verifyLogin,function(req, res) {
 
 
 });
-router.post("/user", (req, res) => {
-  // res.render("user");
+// router.post("/user", (req, res) => {
+//   // res.render("user");
 
-    let session = req.session.data.emp_id;
-    let data_user = [
-      [req.body.mob, req.body.email]
-    ];
-    try{
-    manufac.data_update(data_user,session).then((data) => {console.log(data);res.redirect("/user");}).catch((err) => {console.log(err);});
-    }
-    catch(err){
-      console.error(err);
-      res.redirect('/user')
+//     let session = req.session.data.emp_id;
+//     let data_user = [
+//       [req.body.mob, req.body.email]
+//     ];
+//     try{
+//     manufac.data_update(data_user,session).then((data) => {console.log(data);res.redirect("/user");}).catch((err) => {console.log(err);});
+//     }
+//     catch(err){
+//       console.error(err);
+//       res.redirect('/user')
 
-    }
-});
+//     }
+// });
 
 
 router.get('/front',verifyLogin,function(req, res) {

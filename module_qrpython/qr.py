@@ -117,7 +117,7 @@ while True:
     # Send the decoded data to Node.js using HTTP
     if qr_codes:
         data = qr_codes[0].data.decode('utf-8')
-        url = 'http://localhost:3001/vaccine'
+        url = 'http://localhost:3001/data'
         headers = {'Content-type': 'application/json'}
         payload = {'data': data} 
         #json_data=json.dumps(data)
