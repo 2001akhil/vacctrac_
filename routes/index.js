@@ -133,6 +133,7 @@ router.get('/user',verifyLogin,function(req, res) {
 
 
 });
+//============passing null to db
 // router.post("/user", (req, res) => {
 //   // res.render("user");
 
@@ -147,7 +148,7 @@ router.get('/user',verifyLogin,function(req, res) {
 //       console.error(err);
 //       res.redirect('/user')
 
-//     }
+//     }20
 // });
 
 

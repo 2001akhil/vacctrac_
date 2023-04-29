@@ -52,32 +52,14 @@ app.use(session({secret:"key",cookie:{ maxAge: 3 * 24 * 60 * 60 * 1000},resave: 
 app.use(express.static("public"));
 
 app.use(cors());
-
-
-
-
-
 // app.post('/main', function(req, res) {
 //   // console.log('IR Value: ' + req.body.value);
 //   // res.send('Received IR value: ' + req.body.value);
 //    console.log(req.body)
 //   res.status(200).send("Hi")
 // });
-
-
-
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
-
-
-
-
-
-
-
-
 app.use(function(req, res, next) {
   next(createError(404));
   

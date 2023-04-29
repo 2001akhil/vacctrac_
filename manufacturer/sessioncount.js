@@ -44,9 +44,7 @@ module.exports = {
     return new Promise((resolve, reject) => {
       console.log(statusname);
       let status = [[]];
-      db.query(
-        "UPDATE sessioncount SET status = ? WHERE name = (SELECT MAX(name) FROM sessioncount WHERE name = ?)"
-      );
+      db.query("UPDATE sessioncount SET status = ? WHERE name = (SELECT MAX(name) FROM sessioncount WHERE name = ?)");
       //pending
     });
   },
