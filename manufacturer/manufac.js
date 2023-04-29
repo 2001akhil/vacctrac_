@@ -10,13 +10,15 @@ var array = []; //temporary hold the inactive status from the different session
 module.exports = {
   vaccine_fetch: () => {
     return new promise(async (resolve, reject) => {
-      let sql = `select * from machine_name where flag="inactive" and status="on"`;
+      let sql = `select * from machine_name where flag="inactive"`;
       await db.query(sql, (err, result) => {
         if (err) {
           reject(console.log(err));
-        } else {
+        } else {console.log(result);
           if (result.length > 0) {
-            resolve({ data: result[0].name, message: "Datafetched" });
+            //console.log(result[0].name)
+            const vaccinenames=result.map((item)=>item.name)//insted of foreach
+            resolve({ data: vaccinenames, message: "Datafetched" });
           } else {
             resolve({
               data: "result not to be fetched",

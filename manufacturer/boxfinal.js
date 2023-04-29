@@ -7,7 +7,7 @@ module.exports = {
   box: (boxname, data) => {
     console.log(data);
 
-    return new Promise(async (resolve, reject) => {
+    return new promise(async (resolve, reject) => {
       let sql = `INSERT INTO ${boxname}(vaccinename, expiry_d, manufac_d, company_n) VALUES ?`;
 
       await db.query(sql, [data], (err, result) => {

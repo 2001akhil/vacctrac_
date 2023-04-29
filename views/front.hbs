@@ -22,7 +22,9 @@
 <select name="box" id="box">
   <option value="select">select an option</option>
   {{#if vaccine}}
- <option>{{vaccine}}</option>
+  {{#each vaccine}}
+ <option>{{this}}</option>
+ {{/each}}
  {{else}}
  <option>NO Active devices</option>
  {{/if}}
