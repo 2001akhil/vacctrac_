@@ -48,7 +48,27 @@ a {
     
    
 }
+.button {
+     height: 40px;
+    width: auto;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 69%;
+    font-size: 18px;
+    font-weight: 500;
+    font-size: auto;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #4ac5ba, #06201e);
+    margin-top: 15px;
+    position: relative;
+  
 
+
+}
 @media only screen and (max-width: 600px) {
     .button2 {
         margin-left: auto;
