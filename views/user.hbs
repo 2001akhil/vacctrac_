@@ -8,54 +8,94 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+      <style>
+            /* Custom styling to enable animation */
+            .animate {
+                  --animate-duration: 1s;
+                  animation-duration: var(--animate-duration) !important;
+                  animation-fill-mode: both !important;
+            }
+      </style>
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
 
 <body>
-      <!-- <div class="container-xl px-4 mt-4"> -->
-      <div class="card-header">
-            <h4>User Details</h4>
-      </div>
-      <div class="row">
-            <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png"
-                  alt="">
-            <form action="/user" method="post">
-              
-                  <div class="mb-3">
-                        <label class="small mb-1" for="inputUsername">Username</label>
-                        <input class="form-control" id="inputUsername"value="{{data}}" name="username" type="text" placeholder="Enter your username">
+<div class="card-header animate__animated animate__fadeIn">
+      <h4>User Details</h4>
+</div>
+<div class="row animate__animated animate__fadeIn">
+      <img class="img-account-profile rounded-circle mb-2 animate__animated animate__bounceIn"
+            src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+      <form action="/user" method="post" class="animate__animated animate__fadeIn">
+
+            <div class="mb-3 animate__animated animate__fadeIn">
+                  <label class="small mb-1 animate__animated animate__fadeIn" for="inputUsername">Username</label>
+
+                  <input class="form-control animate__animated animate__fadeIn" class="form-control" id="inputUsername" value="{{data}}"
+                        name="username" type="text" placeholder="Enter your username" readonly>
+            </div>
+            <div class="row gx-3 mb-3 animate__animated animate__fadeIn">
+                  <div class="col-md-6">
+                        <label class="small mb-1" for="inputOrgName">Mobile Number</label>
+                        <input class="form-control animate__animated animate__fadeIn" value="{{mobdata}}" id="inputnum"
+                              name="mob" type="text" placeholder="Enter your mobile number" readonly>
                   </div>
-                  <div class="row gx-3 mb-3">
-                        <div class="col-md-6">
-                              <label class="small mb-1" for="inputOrgName">Mobile Number</label>
-                              <input class="form-control" value="{{mobdata}}" id="inputnum" name="mob" type="text" placeholder="Enter your mobile number">
-                        </div>
-                        <div class="col-md-6">
-                              <label class="small mb-1" for="inputLocation">Location</label>
-                              <input class="form-control" id="inputLocation" type="text"
-                                    placeholder="Enter your location">
-                        </div>
+                  <div class="col-md-6">
+                        <label class="small mb-1" for="inputLocation">Location</label>
+                        <input class="form-control animate__animated animate__fadeIn" id="inputLocation" type="text"
+                              placeholder="Enter your location" readonly>
                   </div>
-                  <div class="mb-3">
-                        <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                        <input class="form-control" value="{{data_email}}"  id="inputEmailAddress" name="email" type="email"
-                              placeholder="Enter your email address">
+            </div>
+            <div class="mb-3 animate__animated animate__fadeIn">
+                  <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                  <input class="form-control animate__animated animate__fadeIn" value="{{data_email}}"
+                        id="inputEmailAddress" name="email" type="email" placeholder="Enter your email address" readonly>
+            </div>
+            <div class="row gx-3 mb-3 animate__animated animate__fadeIn">
+                  <div class="col-md-6">
+                        <label class="small mb-1" for="inputPhone">Employee ID</label>
+                        <input class="form-control animate__animated animate__fadeInBounce" value="{{empi}}" id="inputID"
+                              name="empid" type="number" placeholder="Enter your Employee id" readonly>
                   </div>
-                  <div class="row gx-3 mb-3">
-                        <div class="col-md-6">
-                              <label class="small mb-1" for="inputPhone">Employee ID</label>
-                              <input class="form-control" value="{{empi}}" id="inputID" type="number"
-                                  name="empid"  placeholder="Enter your Employee id">
-                        </div>
-                  </div>
-                  <div>
-                        {{!-- <button class="primary" type="button"><a href="page.html">Save changes</button> --}}
-                  </div>
-                  <div class="button-container">
-                        <input type="button" class="button2" value="GO BACK" onclick="window.location.href='/back'">
-                        <input type="submit" class="button2" value="SAVE CHANGES">
-                  </div>
-            </form>
-      </div>
+            </div>
+            <div>
+                  {{!-- <button class="primary" type="button"><a href="page.html">Save changes</button> --}}
+            </div>
+           
+            
+            <div class="button-container animate__animated animate__fadeIn">
+                  <input type="button" class="button2 btn btn-secondary animate__animated animate__fadeInLeft edit-button"
+                        value="GO BACK" onclick="window.location.href='/back'">
+                  <input type="submit" class="button2 btn btn-primary animate__animated animate__fadeInRight" value="SAVE CHANGES">
+            <input type="button" class="button2 btn btn-primary animate__animated animate__fadeInRight custom-edit-button"
+                  onclick="toggleEditOption(this)" value="CUSTOM EDIT">
+            
+            <script>
+                  function toggleEditOption(button) {
+                        if (button.value === 'CUSTOM EDIT') {
+                              button.value = 'DISABLE EDIT';
+                              $('input').prop('readonly', false);
+                        } else {
+                              button.value = 'CUSTOM EDIT';
+                              $('input').prop('readonly', true);
+                        }
+                  }
+            </script>
+
+            </div>
+            
+           
+
+      </form>
+</div>
+
+
+                 
 </body>
 
 </html>

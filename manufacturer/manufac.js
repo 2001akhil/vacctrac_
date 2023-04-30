@@ -1,7 +1,7 @@
 /*Author:akhil*/
 const { promises } = require("fs");
 const { resolve } = require("path");
-const promise = require("promise");
+const promise = require("Promise");
 var db = require("../dbconnector/connection");
 const { Namespace } = require("socket.io");
 
@@ -53,6 +53,7 @@ module.exports = {
           if (err) {
             reject(console.log(err));
           } else {
+            console.log(result)
             if (result.affectedRows > 0) {
               resolve({ data: result, message: "Data updated" });
             } else {
@@ -76,6 +77,7 @@ module.exports = {
          (err, result) => {
            if (err) {
              reject(err);
+        
            } else {
              if (result.affectedRows > 0) {
                resolve({ data: result, message: "Inserted" });

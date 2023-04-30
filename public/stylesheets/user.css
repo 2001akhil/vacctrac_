@@ -84,19 +84,45 @@ div.card-header {
 
 .form-control,
 .dataTable-input {
-    display: block;
-    width: 500px;
-    padding: 20px;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 1;
-    color: #69707a;
-    margin-left: 30%;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #c5ccd6;
-    border-radius: 0.35rem;
+  display: block;
+  width: 500px;
+  padding: 20px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1;
+  color: #69707a;
+  margin-left: 30%;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #c5ccd6;
+  border-radius: 0.35rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: medium;
+  position: relative;
 }
+
+.form-control::before,
+.dataTable-input::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -15px;
+  height: 100%;
+  width: 10px;
+  background-color: #fff;
+}
+
+.form-control::after,
+.dataTable-input::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -15px;
+  height: 100%;
+  width: 10px;
+  background-color: #fff;
+}
+
 
 button.primary {
     margin-left: 69%;
@@ -120,12 +146,15 @@ label {
     padding: 20px;
 }
 
+
 h4 {
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
-    font-size: x-large;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  font-size: x-large;
+  animation: fadeIn 1s;
 }
+
 .button-container {
     position: absolute;
     /* justify-content: space-between; */

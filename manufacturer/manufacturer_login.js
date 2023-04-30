@@ -1,11 +1,11 @@
 
 var db = require("../dbconnector/connection");
+const promise=require('Promise')
 
-const checkMail = (email) => {
-  return new Promise((resolve, reject) => {
-    let sql = "select * from login where emp_id = ?";
-    db.query(sql, [email], (err, result) => {
-
+const checkMail = (emp_id) => {
+  return new promise((resolve, reject) => {
+    let sql = "select * from login where emp_id=?";
+    db.query(sql, [emp_id], (err, result) => {
       if (err) {
         reject(err);
       } else {

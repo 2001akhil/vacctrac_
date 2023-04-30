@@ -1,5 +1,5 @@
 //author:Akhil
-const promise=require('promise');
+const promise=require('Promise');
 var db = require("../dbconnector/connection");
 
 module.exports = {

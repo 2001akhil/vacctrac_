@@ -193,10 +193,8 @@ await manufac_final.box(box_name,data).then((data)=>{console.log(data.message);r
 
  router.get("/history", verifyLogin, (req, res) => {
    res.render("history");
+   
  });
-router.post('/history',(req,res)=>{
-
-})
 
 //============================================================================
 router.get("/back", verifyLogin, (req, res) => {
