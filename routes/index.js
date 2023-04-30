@@ -133,7 +133,7 @@ router.get('/user',verifyLogin,function(req, res) {
 
 
 });
-//============passing null to db
+//============passing null to the db
 // router.post("/user", (req, res) => {
 //   // res.render("user");
 
@@ -180,19 +180,20 @@ router.post("/front", verifyLogin, async (req, res) => {
   await manufac.front(box_details).then((response) => {console.log(response.message);req.session.box_name = req.body.box;}).catch((err) => {console.log(err);res.redirect("/front");});
   await manufac_final.table_finder(req.body.box).then((response)=>{console.log(response); res.redirect("/vaccine");}).catch((err)=>(console.log(err)))
 });
-router.get('/vaccine_edit',(req,res)=>{
-  res.render('vaccine')
-})
+
+
 
 router.get("/vaccine",verifyLogin,async(req, res) => {
+   
    const box_name = req.session.box_name;
    try{await manufac_final.table_finder(box_name).then((data) => {console.log(data.data);manufac_final.detect_table(data.data).then((data)=>{console.log(data.data.tempreature),res.render("vaccine",{datatemp:data.data.tempreature,datair1:data.data.ir1,datair2:data.data.ir2});}).catch((err)=>{console.log(err)});}).catch((err)=>{console.log(err)})}
    catch(err){console.log(err)}
 });
 router.post('/vaccine',async(req,res)=>{
+  const empi_id = req.session.data.emp_id;
   const box_name = req.session.box_name;
   console.log(box_name);
-let data=[[req.body.name,req.body.id1,req.body.dob,req.body.dobb]];
+let data=[[req.body.name,req.body.id1,req.body.dob,req.body.dobb,empi_id,req.body.temp]];//add some more examples
 await manufac_final.box(box_name,data).then((data)=>{console.log(data.message);res.redirect('/back')}).catch((err)=>{console.log(err);res.redirect('/vaccine')})
 
 
@@ -252,11 +253,16 @@ router.get('/logout',(req,res)=>{
 
 /*<=============================M1 stop===========================================================>*/
 
-router.get("/box_page",(req, res) => {
-  res.render("box/home_box");
+/*<========================Box start===================================>*/
+router.get('/login_box',(req,res)=>{
+  res.render("box/updated/login");
+})
+router.get("/home", (req, res) => {
+  res.render("box/updated/home");
 });
 
 
+/*<====================BOX Stop================================================>*/
 
 
 module.exports = router;

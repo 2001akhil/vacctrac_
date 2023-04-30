@@ -98,7 +98,9 @@ module.exports = {
       expiry_d VARCHAR(255),
       manufac_d VARCHAR(255),
       company_n VARCHAR(255),
-      vaccine_id VARCHAR(255)
+      vaccine_id VARCHAR(255),
+      empi_id VARCHAR(255),
+      current_temp(255)
     )`;
     
     await db.query(dbs, (err, result) => {

@@ -94,10 +94,13 @@ box.post('/login',async(req,res)=>{
 //   res.send(data);  
 // })
 
-box.get('/home',(req,res)=>{
-  res.redirect('box/home_box')
-})
+// box.get('/home',(req,res)=>{
+//   res.render('box/updated/home')
+// })
 
+box.get("/home", (req, res) => {
+  
+});
 
 
 
