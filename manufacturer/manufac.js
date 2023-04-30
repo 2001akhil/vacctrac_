@@ -123,6 +123,25 @@ module.exports = {
     });
   });
 },
+table_finder:(table)=>{
+  console.log(table)
+  return new promise((resolve,reject)=>{
+    db.query("select * from table where boxname=?",table,(err,result)=>{
+      if(err){
+        reject(err);
+        console.log(err)
+      }
+      else{
+        if(result.length>0){
+          resolve({})
+        }
+        else{
+          resolve({})
+        }
+      }
+    })
+  })
+}
 
   
 };

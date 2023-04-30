@@ -1,8 +1,6 @@
 const db=require('../dbconnector/connection')
 const{formattedDate, formattedTime}=require('../dateandtime');
-const { resolve } = require('promise');
-const { Promise } = require('mongoose');
-const promise=require('promise')
+const promise=require('Promise')
 // const { sessionData } = require("../routes/index");
 
 

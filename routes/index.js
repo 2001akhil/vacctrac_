@@ -178,6 +178,7 @@ router.post("/front", verifyLogin, async (req, res) => {
   ]; 
   manufac.createDb(req.body.box).then((data) => {console.log(data);}).catch((err) => {console.log(err);});
   await manufac.front(box_details).then((response) => {console.log(response.message);req.session.box_name = req.body.box; res.redirect("/vaccine");}).catch((err) => {console.log(err);res.redirect("/front");});
+  await manufac.table_finder(req.body.box).then((response)=>{console.log(first)})
 });
 
 router.get("/vaccine", verifyLogin, (req, res) => {
@@ -193,7 +194,7 @@ await manufac_final.box(box_name,data).then((data)=>{console.log(data.message);r
 
  router.get("/history", verifyLogin, (req, res) => {
    res.render("history");
-   
+
  });
 
 //============================================================================
