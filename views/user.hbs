@@ -1,101 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-      <meta charset="UTF-8">
-      <link rel="stylesheet" href="stylesheets/user.css">
-
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-
-    
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-      <style>
-          
-            .animate {
-                  --animate-duration: 1s;
-                  animation-duration: var(--animate-duration) !important;
-                  animation-fill-mode: both !important;
-            }
-      </style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-
-
 <body>
-<div class="card-header animate__animated animate__fadeIn">
-      <h4>User Details</h4>
-</div>
-<div class="row animate__animated animate__fadeIn">
-      <img class="img-account-profile rounded-circle mb-2 animate__animated animate__bounceIn"
-            src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-      <form action="/user" method="post" class="animate__animated animate__fadeIn">
-
-            <div class="mb-3 animate__animated animate__fadeIn">
-                  <label class="small mb-1 animate__animated animate__fadeIn" for="inputUsername">Username</label>
-
-                  <input class="form-control animate__animated animate__fadeIn" class="form-control" id="inputUsername" value="{{data}}"
-                        name="username" type="text" placeholder="Enter your username" readonly>
-            </div>
-            <div class="row gx-3 mb-3 animate__animated animate__fadeIn">
-                  <div class="col-md-6">
-                        <label class="small mb-1" for="inputOrgName">Mobile Number</label>
-                        <input class="form-control animate__animated animate__fadeIn" value="{{mobdata}}" id="inputnum"
-                              name="mob" type="text" placeholder="Enter your mobile number" readonly>
-                  </div>
-                  <div class="col-md-6">
-                        <label class="small mb-1" for="inputLocation">Location</label>
-                        <input class="form-control animate__animated animate__fadeIn" id="inputLocation" type="text"
-                              placeholder="Enter your location" readonly>
-                  </div>
-            </div>
-            <div class="mb-3 animate__animated animate__fadeIn">
-                  <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                  <input class="form-control animate__animated animate__fadeIn" value="{{data_email}}"
-                        id="inputEmailAddress" name="email" type="email" placeholder="Enter your email address" readonly>
-            </div>
-            <div class="row gx-3 mb-3 animate__animated animate__fadeIn">
-                  <div class="col-md-6">
-                        <label class="small mb-1" for="inputPhone">Employee ID</label>
-                        <input class="form-control animate__animated animate__fadeInBounce" value="{{empi}}" id="inputID"
-                              name="empid" type="number" placeholder="Enter your Employee id" readonly>
-                  </div>
-            </div>
-            <div>
-                  {{!-- <button class="primary" type="button"><a href="page.html">Save changes</button> --}}
-            </div>
-           
-            
-            <div class="button-container animate__animated animate__fadeIn">
-                  <input type="button" class="button2 btn btn-secondary animate__animated animate__fadeInLeft edit-button"
-                        value="GO BACK" onclick="window.location.href='/back'">
-                  <input type="submit" class="button2 btn btn-primary animate__animated animate__fadeInRight" value="SAVE CHANGES">
-      <input type="button" class="button2 btn btn-primary animate__animated animate__fadeInRight custom-edit-button"
-            onclick="toggleEditOption(this)" value="CUSTOM EDIT">
-            
-            <script>
-                  function toggleEditOption(button) {
-                        if (button.value === 'CUSTOM EDIT') {
-                              button.value = 'DISABLE EDIT';
-                              $('input').prop('readonly', false);
-                        } else {
-                              button.value = 'CUSTOM EDIT';
-                              $('input').prop('readonly', true);
-                        }
-                  }
-            </script>
-
-            </div>
-            
-           
-
-      </form>
-</div>
-
-
-                 
+    <div>
+        <button class="button2" type="button"><a href="page.html">GO BACK</button>
+      </div>
+    <!-- <div class="container-xl px-4 mt-4"> -->
+        <!-- <div class="card-header"><h4>User Details</h4></div> -->
+        <div class="row-header">
+            <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt=""> 
+            <button class="profile"><a><h3>Edit Profile<i class="fa-solid fa-pen-to-square"></i></h3></a></button>           
+            <form>
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputUsername">Username</label>
+                                <input  id="inputUsername" type="text" value="abcdef">
+                            </div>
+                            <div class="row gx-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputOrgName">Mobile Number</label>
+                                    <input  id="inputnum" type="text" value="1234567890">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLocation">Location</label>
+                                    <input  id="inputLocation" type="text" value="street 24,norway" >
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputEmailAddress">Email ID</label>
+                                <input  id="inputEmailAddress" type="email" value="abc@gmail.com" >
+                            </div>
+                            <div class="row gx-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone">Employee ID</label>
+                                    <input  id="inputID" type="number" value="1234">
+                                </div>
+                            </div> 
+                             <!-- <div>
+                            <button class="primary" type="button"><a href="page.html">Save changes</button>
+                            </div> -->
+                            
+                        </form>
+                    </div>
 </body>
-
 </html>
