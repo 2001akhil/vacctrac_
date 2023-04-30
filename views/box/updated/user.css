@@ -1,0 +1,55 @@
+body{
+  background-color: #b3cde0;
+}
+
+h3.user_profile{
+    margin-top: 5%;
+    margin-left: -8%; 
+    color: #121414;
+    font-family: 'Times New Roman', Times, serif;
+    align-items: center;
+    margin-left: 200px;
+  }
+  .user-profile {
+      background-color: #005b96;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      color: #dde6ec;
+    }
+    .user-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .user-details label {
+      font-weight: bold;
+      width: 150px;
+      margin-right: 50px;
+      color: #dde6ec;
+    }
+
+    .user-details span {
+      flex: 1;
+    }
+
+    .user-avatar {
+      display: block;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .user-name {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
