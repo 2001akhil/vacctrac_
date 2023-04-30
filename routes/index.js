@@ -181,7 +181,7 @@ router.post("/front", verifyLogin, async (req, res) => {
   await manufac.table_finder(req.body.box).then((response)=>{console.log(first)})
 });
 
-router.get("/vaccine", verifyLogin, (req, res) => {
+router.get("/vaccine",(req, res) => {
   res.render("vaccine");
 });
 router.post('/vaccine',async(req,res)=>{

@@ -5,7 +5,7 @@ const promise = require("Promise");
 var db = require("../dbconnector/connection");
 const { Namespace } = require("socket.io");
 
-var array = []; //temporary hold the inactive status from the different session
+var array = []; //temporary hold the inactive status from the different session://for test purpose
 
 module.exports = {
   vaccine_fetch: () => {
