@@ -43,19 +43,21 @@ module.exports = {
     });
   },
   detect_table: (tablename) => {
-    console.log(tablename)
+    console.log(tablename);
     return new promise((resolve, reject) => {
-      db.query(`select id,tempreature,ir1,ir2 from ${tablename}ORDER BY id DESC LIMIT 1`,(err, result) => {
+      db.query(`SELECT * FROM ${tablename} ORDER BY id DESC LIMIT 1`,(err, result) => {
           if (err) {
             reject(err);
             console.log(err);
           } else {
             if (result.length > 0) {
+              // const lastElement = result[0];
+              // const values = Object.values(lastElement).map((value) => value);
               resolve({ data: result[0], message: "Data fetched" });
             } else {
               resolve({
                 data: "Not to be fetched",
-                message: "Datahad some err",
+                message: "Data had some error",
               });
             }
           }
