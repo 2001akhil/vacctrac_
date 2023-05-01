@@ -205,7 +205,13 @@ await manufac_final.box(box_name,data).then((data)=>{console.log(data.message);r
   manufac.history_tb().then((data)=>{console.log(data.data);res.render('history')}).catch((err)=>{console.log(err)})
  });
 
-
+router.get('/s',(req,res)=>{
+  db.query("select * from sensordata",(err,result)=>{
+    if(err)
+    throw err
+    res.send(result)
+  })
+})
 
 //============================================================================
 router.get("/back", verifyLogin, (req, res) => {
