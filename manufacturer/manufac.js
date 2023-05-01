@@ -100,7 +100,7 @@ module.exports = {
       company_n VARCHAR(255),
       vaccine_id VARCHAR(255),
       empi_id VARCHAR(255),
-      current_temp(255)
+      current_temp VARCHAR(255)
     )`;
     
     await db.query(dbs, (err, result) => {
@@ -125,6 +125,21 @@ module.exports = {
     });
   });
 },
+history_tb:()=>{
+  return new promise((resolve,reject)=>{
+    db.query("select * from matcher",(err,result)=>{
+      if(err)
+      throw err
+      if(result.length>0)
+      {
+        resolve({data:result,message:"Data fetch",status:'success'})
+      }
+      else{
+        resolve({data:"occuranerror",message:"No data",status:"Not success"})
+      }
+    })
+  })
+}
 
 
   

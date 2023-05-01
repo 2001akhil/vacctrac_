@@ -7,6 +7,8 @@ const sessionname=require("../manufacturer/sessioncount")
 const manufac = require("../manufacturer/manufac");
 const manufac_final = require("../manufacturer/boxfinal");//final stage
 const session = require('express-session');
+const { captureRejectionSymbol } = require('nodemailer/lib/xoauth2');
+const { compareSync } = require('bcrypt');
 
 
 /* GET home page. */
@@ -193,16 +195,17 @@ router.post('/vaccine',async(req,res)=>{
   const empi_id = req.session.data.emp_id;
   const box_name = req.session.box_name;
   console.log(box_name);
-let data=[[req.body.name,req.body.id1,req.body.dob,req.body.dobb,empi_id,req.body.temp]];//add some more examples
+let data=[[req.body.name,req.body.id1,req.body.dob,req.body.dobb,empi_id,req.body.temp]];
 await manufac_final.box(box_name,data).then((data)=>{console.log(data.message);res.redirect('/back')}).catch((err)=>{console.log(err);res.redirect('/vaccine')})
 
 
 })
 
- router.get("/history", verifyLogin, (req, res) => {
-   res.render("history");
-
+ router.get("/history", (req, res) => {
+  manufac.history_tb().then((data)=>{console.log(data.data);res.render('history')}).catch((err)=>{console.log(err)})
  });
+
+
 
 //============================================================================
 router.get("/back", verifyLogin, (req, res) => {
