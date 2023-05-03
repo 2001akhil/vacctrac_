@@ -9,6 +9,8 @@ const manufac_final = require("../manufacturer/boxfinal");//final stage
 const session = require('express-session');
 const { captureRejectionSymbol } = require('nodemailer/lib/xoauth2');
 const { compareSync } = require('bcrypt');
+const { formattedDate, formattedTime } = require("../dateandtime");
+
 
 
 /* GET home page. */
@@ -135,7 +137,7 @@ router.get('/user',verifyLogin,function(req, res) {
 
 
 });
-//============passing null to the db
+// //============passing null to the db
 // router.post("/user", (req, res) => {
 //   // res.render("user");
 
@@ -183,7 +185,9 @@ router.post("/front", verifyLogin, async (req, res) => {
   await manufac_final.table_finder(req.body.box).then((response)=>{console.log(response); res.redirect("/vaccine");}).catch((err)=>(console.log(err)))
 });
 
-
+router.get('/vaccine_edit',(req,res)=>{
+  res.render('vaccine')
+})
 
 router.get("/vaccine",verifyLogin,async(req, res) => {
    
@@ -195,11 +199,18 @@ router.post('/vaccine',async(req,res)=>{
   const empi_id = req.session.data.emp_id;
   const box_name = req.session.box_name;
   console.log(box_name);
-let data=[[req.body.name,req.body.id1,req.body.dob,req.body.dobb,empi_id,req.body.temp]];
+let data=[[req.body.name,req.body.id1,req.body.dob,req.body.dobb,empi_id,req.body.temp,formattedDate]];
 await manufac_final.box(box_name,data).then((data)=>{console.log(data.message);res.redirect('/back')}).catch((err)=>{console.log(err);res.redirect('/vaccine')})
 
 
 })
+// router.get('/s',(req,res)=>{
+//   db.query('select * from sensordata',(err,result)=>{
+//     if(err)
+//     throw err;
+//     res.send(result)
+//   })
+// })
 
  router.get("/history", (req, res) => {
   manufac.history_tb().then((data)=>{console.log(data.data);res.render('history')}).catch((err)=>{console.log(err)})
@@ -251,21 +262,6 @@ router.get('/logout',(req,res)=>{
 // //   // res.render('slot', { title: 'Dashboard' });
 // // });
 //=======================================================================
-
- 
-
-/*<=============================M1 stop===========================================================>*/
-
-/*<========================Box start===================================>*/
-router.get('/login_box',(req,res)=>{
-  res.render("box/updated/login");
-})
-router.get("/home", (req, res) => {
-  res.render("box/updated/home");
-});
-
-
-/*<====================BOX Stop================================================>*/
 
 
 module.exports = router;

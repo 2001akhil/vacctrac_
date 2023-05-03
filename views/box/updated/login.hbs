@@ -126,14 +126,14 @@ button:hover{
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form>
-        <h3>Login Here</h3>
+    <form action="/login_box" method="post">
 
+        <h3>Login Here</h3>
         <label for="boxname">Boxname</label>
-        <input type="text" placeholder="Enter Boxname" id="username">
+        <input type="text" name="name" placeholder="User name" required="">
 
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password">
+        <input type="password" name="pasw" placeholder="Password" id="password">
 
         <button>Log In</button>
     </form>

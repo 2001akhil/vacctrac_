@@ -100,7 +100,8 @@ module.exports = {
       company_n VARCHAR(255),
       vaccine_id VARCHAR(255),
       empi_id VARCHAR(255),
-      current_temp VARCHAR(255)
+      current_temp VARCHAR(255),
+      date VARCHAR(255)
     )`;
     
     await db.query(dbs, (err, result) => {

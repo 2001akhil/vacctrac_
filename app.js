@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 const cors=require("cors")
 var hbs=require('express-handlebars')
 
-var indexRouter = require("./routes/index");
+var indexRouter = require("./routes/manufacturer");
 var usersRouter = require('./routes/box');
 
 
@@ -60,6 +60,7 @@ app.use(cors());
 // });
 app.use('/', indexRouter);
 app.use('/box', usersRouter);
+
 app.use(function(req, res, next) {
   next(createError(404));
   
