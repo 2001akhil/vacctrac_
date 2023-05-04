@@ -38,6 +38,20 @@ box.get('/logout',(req,res)=>{
 
 
 
+box.get('/home',(req,res)=>{
+  res.render('box/updated/home')
+
+})
+
+box.get('/history',(req,res)=>{
+  res.render('box/updated/history')
+})
+
+box.get('/user',(req,res)=>{
+   res.render("box/updated/user");
+
+})
+
 
 
 module.exports=box;
