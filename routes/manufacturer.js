@@ -137,6 +137,7 @@ router.get('/user',verifyLogin,function(req, res) {
 
 
 });
+
 // //============passing null to the db
 // router.post("/user", (req, res) => {
 //   // res.render("user");
@@ -262,6 +263,8 @@ router.get('/logout',(req,res)=>{
 // //   // res.render('slot', { title: 'Dashboard' });
 // // });
 //=======================================================================
+
+
 
 
 module.exports = router;

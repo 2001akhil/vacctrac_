@@ -13,10 +13,10 @@ const login=(name,password)=>{
                   else{
                         console.log(result)
                         if(result.length>0){
-                        resolve({datas:result[0],status:"set"})
+                        resolve({data:result[0],status:"set"})
                         }
                         else{
-                              resolve({datas:"NO Data",status:"NO Data"})
+                              resolve({data:"NO Data",status:"NO Data"})
                         }
                   }
 
