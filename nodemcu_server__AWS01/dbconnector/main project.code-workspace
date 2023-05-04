@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../../Documents/100 days of array"
+		},
+		{
+			"path": "../../iot"
+		},
+		{
+			"path": "../../Mailer"
+		},
+		{
+			"path": "../../../../../../xampp/htdocs/dashboard/Exam"
+		},
+		{
+			"path": "../../../../Downloads/mozillasjcet.github.io-master/mozillasjcet.github.io-master"
+		},
+		{
+			"path": "../../../../Documents/React"
+		},
+		{
+			"path": "../../simulation"
+		},
+		{
+			"path": "../../../../Downloads/molyhtml-10"
+		},
+		{
+			"path": "../../practice"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "main project"
+	}
+}
