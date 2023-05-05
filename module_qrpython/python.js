@@ -1,5 +1,5 @@
 // author:Akhil
-const { resolve } = require("promise");
+const { resolve } = require("Promise");
 const { PythonShell } = require("python-shell");
 const file={
       scriptPath:__dirname

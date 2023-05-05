@@ -1,4 +1,3 @@
-//author:Akhil
 const promise=require('Promise');
 var db = require("../dbconnector/connection");
 

@@ -5,10 +5,22 @@ var box = express.Router();
 const login = require("../box/box_login");
 var db = require("../dbconnector/connection");
 const { route } = require('./manufacturer');
+const boxes=require('../box/box')
+
+const verifyLogin=(req,res,next)=>{
+  if(req.session.loggedIn){
+    next();
+  }
+  else{
+      res.render("box/updated/login");
+  }
+
+}
 
 
 box.get('/login_box',(req,res)=>{
   res.render("box/updated/login");
+ 
 })
 box.post('/login_box',async(req, res) => {
   let name=req.body.name;
@@ -38,8 +50,9 @@ box.get('/logout',(req,res)=>{
 
 
 
-box.get('/home',(req,res)=>{
-  res.render('box/updated/home')
+box.get('/home',verifyLogin,(req,res)=>{
+  boxes.match(req.session.name).then((resolve) => {console.log(resolve);}).catch((err)=>{console.log(err)})
+  res.render("box/updated/home");
 
 })
 
