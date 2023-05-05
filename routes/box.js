@@ -48,10 +48,18 @@ box.get('/logout',(req,res)=>{
   res.render("box/updated/login");
 })
 
+box.get('/back',verifyLogin,(req,res)=>{
+    
+  let sname= req.session.data.name;
+  console.log(sname)
+  
+   res.render("box/updated/index", {data:sname});
+})
+
 
 
 box.get('/home',verifyLogin,(req,res)=>{
-  boxes.match(req.session.name).then((resolve) => {console.log(resolve);}).catch((err)=>{console.log(err)})
+  boxes.match(req.session.name).then((resolve) => {console.log(resolve); }).catch((err)=>{console.log(err)})
   res.render("box/updated/home");
 
 })

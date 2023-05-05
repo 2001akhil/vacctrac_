@@ -26,7 +26,7 @@ module.exports={
 
       useridentifier:(sessioname)=>{
             return new promise((resolve, reject) => {
-                  db.query("select")
+                  db.query("select* from ")
                   
             })
             

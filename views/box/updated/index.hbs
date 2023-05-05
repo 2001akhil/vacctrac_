@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
     </head>
   <body>
+    
     <h3>Welcome</h3>
     <input type="checkbox" id="check">
     <label for="check">
@@ -15,11 +16,13 @@
     </label>
     
     <div class="sidebar">
-    <header>{{data}}</header>
+    <header>      
+      <img src="../stylesheets/logo.png" alt="logo">
+      {{data}}</header>
     <ul>
-     <li><a href="home.html"><i class="fas fa-home"></i>Home</a></li>
-     <li><a href="history.html"><i class="fas fa-history"></i>History</a></li>
-     <li><a href="user.html"><i class="fas fa-user"></i>Profile</a></li>
+     <li><a href="/box/home"><i class="fas fa-home"></i>Home</a></li>
+     <li><a href="/box/history"><i class="fas fa-history"></i>History</a></li>
+     <li><a href="/box/user"><i class="fas fa-user"></i>Profile</a></li>
      <li><a href="/box/logout"><i class="fas fa-power-off"></i>Log out</a></li>
     </ul>
    </div>
