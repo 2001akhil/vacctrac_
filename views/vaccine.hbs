@@ -1,21 +1,4 @@
 
-{{!-- <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-</head>
-<body>
-      {{#each name}}
-      Vaccine_name:<input type="text" value={{this.vaccinename}}>
-
-      Exp_date:<input type="text" value={{this.Expiry_d}}>
-
-      Manufacturer_name:<input type="text" value={{this.Manufact_d}}>
-
-      Manufacturering_date:<input type="text" value={{this.company_n}}>
-
-      {{/each}} --}}
 
 
 <head>
@@ -28,9 +11,7 @@
 
 <body>
      
-      <div class="button2">
-            <input type="button" value="GO BACK" onclick="window.location.href='slot.html'">
-      </div>
+      
       <div class="formbold-main-wrapper">
             <form action="/vaccine" method="POST">
 
@@ -39,7 +20,7 @@
             
                   <div class="formbold-mb-3">
                         <label for="name" class="formbold-form-label"> Name of the Vaccine </label>
-                        <input type="text" name="name" id="name" {{#if details}}{{#each details}}value="{{this.vaccinename}}"" {{/each}}{{else}} value="" {{/if}}class="formbold-form-input"/>
+                        <input type="text" name="name" id="name" {{#if details}}{{#each details}}value="{{this.vaccinename}}" {{/each}}{{else}} value="" {{/if}}class="formbold-form-input"/>
                   </div>
 
                   <div class="formbold-mb-31">
@@ -62,6 +43,14 @@
 
                         <input type="text" value="{{datatemp}}" name="temp"  id="temp" class="formbold-form-input formbold-mb-3"/>
                   </div>
+                  <div class="formbold-mb-35">
+                        <label for="temp" class="formbold-form-label"> Available Units </label>
+                  
+                        <input type="text" name="units" id="units" class="formbold-form-input formbold-mb-3" />
+                  </div>
+                  
+                  <button class="button2"  onclick="window.location.href='slot.html'">GO BACK </button>
+                  
                   <button class="formbold-btn">Submit</button>
                  
             </form>

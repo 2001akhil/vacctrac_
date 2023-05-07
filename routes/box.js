@@ -8,13 +8,8 @@ const { route } = require('./manufacturer');
 const boxes=require('../box/box')
 
 const verifyLogin=(req,res,next)=>{
-  if(req.session.loggedIn){
-    next();
-  }
-  else{
-      res.render("box/updated/login");
-  }
-
+  if(req.session.loggedIn){next();}
+  else{res.render("box/updated/login");}
 }
 
 
@@ -58,11 +53,31 @@ box.get('/back',verifyLogin,(req,res)=>{
 
 
 
-box.get('/home',verifyLogin,(req,res)=>{
-  boxes.match(req.session.name).then((resolve) => {console.log(resolve); }).catch((err)=>{console.log(err)})
-  res.render("box/updated/home");
-
-})
+function home_handler(req, res) {
+  boxes
+    .match(req.session.data.name)
+    .then((resolve) => {
+      console.log(resolve);
+      boxes
+        .useridentifier(resolve.data)
+        .then((data) => {
+          console.log(data.data.tempreature);
+          console.log(data.sum)
+          res.render("box/updated/home", {
+            boxid: req.session.data.boxid,
+            temp: data.data.tempreature,
+            sum: data.sum, 
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+box.get("/home", verifyLogin, home_handler);
 
 box.get('/history',(req,res)=>{
   res.render('box/updated/history')
