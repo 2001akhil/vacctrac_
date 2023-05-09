@@ -7,7 +7,7 @@
 }
 
 body {
-      font-family: 'Times New Roman', Times, serif;
+      font-family: 'Poppins', sans-serif;
       height: 100vh;
       display: flex;
       justify-content: center;
@@ -75,7 +75,7 @@ body {
       padding: 13px 22px;
       border-radius: 5px;
       border: 1px solid #dde3ec;
-      background: #ffffff;
+      background: #d3d3d3;
       font-weight: 500;
       font-size: 16px;
       color: #000000;
@@ -97,16 +97,16 @@ body {
       padding: 14px 25px;
       border: none;
       position: static;
-      font-weight: 500;
+      font-weight: bold;
       color: white;
       cursor: pointer;
-      /* margin-top: 25px; */
       height: 50px;
-      margin-left: 60%;
+      margin-top: 20px;
       transition: all 0.3s ease;
       background: linear-gradient(135deg, #4ac5ba, #06201e);
 }
 
+    
 .formbold-btn:hover {
       background: linear-gradient(-135deg, #4ac5ba, #06201e);
 }
@@ -124,10 +124,10 @@ body {
       border: none;
       color: #fff;
       font-size: 16px;
-      font-weight: 500;
+      font-weight: bold;
       letter-spacing: 1px;
-      margin-top: 60px;
-      margin-left: 18px;
+      margin-top: 20px;
+      margin-right: 150px;
       cursor: pointer;
       transition: all 0.3s ease;
       background: linear-gradient(135deg, #4ac5ba, #06201e);
@@ -137,7 +137,9 @@ body {
       /* transform: scale(0.99); */
       background: linear-gradient(-135deg, #4ac5ba, #06201e);
 }
-
+.button2-w-45 {
+      width: 45%;
+}
 @media(max-width: 584px) {
       .container {
             max-width: 100%;
