@@ -14,23 +14,23 @@
     <div class="contain">
         <div class="details">
         <form class="details">
-          <label>BOX ID</label>
-          <input value='{{boxid}}'>
-          <label>AVAILABLE UNITS</label>
-          <input value='{{sum}}'>
+          <label class="box_info">BOX ID</label>
+          <input class="available_units" value='{{boxid}}'>
+          <label class="box_info">AVAILABLE UNITS</label>
+          <input class="available_units" value='{{sum}}'>
         </form>
         </div>
       </div>
       <div class="box">
         <form class="boxes">
         <label class="current" for="temperature"><b>Current Temperature</b></label>
-        <input value={{temp}}>
+        <input class="current_values" value="{{temp}} &#8451">
         </form>
     </div>
 	<div class="box">
         <form class="boxes">
         <label class="current" for="location"><b>Current Location</b></label>
-        <input>
+        <input class="current_values">
     </div>
     </body>
 </body>
