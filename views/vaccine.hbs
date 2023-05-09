@@ -48,17 +48,119 @@
                   
                         <input type="text" name="units" id="units" class="formbold-form-input formbold-mb-3" />
                   </div>
-                  
+                  <div class="button-wrapper">
                   <button class="button2"  onclick="window.location.href='slot.html'">GO BACK </button>
-                  
-                  <button class="formbold-btn">Submit</button>
-                 
+                  <button class="formbold-btn">SUBMIT</button>
+                 </div>
             </form>
       </div>
       </div>
      
 </body>
 
-<script>    
+<script> 
+      const Web3 = require('web3');
+
+           
+            const web3 = new Web3(Web3.givenProvider || 'http://localhost:3001');
+
+            const contractABI = [
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "vacccount",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "vaccname",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "manuname",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "location",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "temperature",
+				"type": "string"
+			}
+		],
+		"name": "addBox",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "box",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "vacccount",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "vaccname",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "manuname",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "location",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "temperature",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "id",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+            const contractAddress = '0xD7ACd2a9FD159E69Bb102A1ca21C9a3e3A5F771B';
+
+            
+            const contract = new web3.eth.Contract(contractABI, contractAddress);
+
+            contract.methods.insertData(vaccineName, vaccineID, dateOfExp, temperature, availableUnits)
+                  .send({ from: })/* insert sender address here */ 
+                  .on('receipt', (receipt) => {
+                        console.log('Data inserted onto the blockchain:', receipt);
+                  });
+     
       </script>
 
