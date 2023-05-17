@@ -27,11 +27,7 @@ const verifyLogin=(req,res,next)=>{
   
 }
 //,
-const typereqbody=(req,next)=>{
-  console.log(typeof req.body);
-  console.log(req.body);
-  next()
-}
+
 
 
 //===============================
@@ -138,6 +134,10 @@ router.get('/user',verifyLogin,function(req, res) {
 
 });
 
+router.post('/user',(req,res)=>{
+  
+})
+
 // //============passing null to the db
 // router.post("/user", (req, res) => {
 //   // res.render("user");
@@ -205,13 +205,13 @@ await manufac_final.box(box_name,data).then((data)=>{console.log(data.message);r
 
 
 })
-// router.get('/s',(req,res)=>{
-//   db.query('select * from sensordata',(err,result)=>{
-//     if(err)
-//     throw err;
-//     res.send(result)
-//   })
-// })
+
+router.get("/history_edit", (req, res) => {
+
+      res.render("history");
+   
+});
+
 
  router.get("/history", (req, res) => {
   manufac.history_tb().then((data)=>{console.log(data.data);res.render('history')}).catch((err)=>{console.log(err)})

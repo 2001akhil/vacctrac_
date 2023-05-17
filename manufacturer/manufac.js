@@ -109,17 +109,17 @@ module.exports = {
         reject(err);
       } else {
         resolve({ data: result, message: "Table created"});
-       async function updatedata() {
-         let sql = `UPDATE machine_name SET flag="Active"  WHERE name=?`;
-         try {
-           const result = await db.query(sql,dbname);
-           console.log("Status Active");
-           module.exports={result}
-         } catch (err) {
-           console.log(err);
-         }
-       }
-       updatedata();
+      //  async function updatedata() {
+      //    let sql = `UPDATE machine_name SET flag="Active"  WHERE name=?`;
+      //    try {
+      //      const result = await db.query(sql,dbname);
+      //      console.log("Status Active");
+      //      module.exports={result}
+      //    } catch (err) {
+      //      console.log(err);
+      //    }
+      //  }
+      //  updatedata();
 
 
       }
@@ -127,18 +127,9 @@ module.exports = {
   });
 },
 history_tb:()=>{
+  // SELECT login.*,AWS01.date FROM login inner join AWS01 ON AWS01.empi_id=login.emp_id WHERE login.emp_id=1
   return new promise((resolve,reject)=>{
-    db.query("select * from matcher",(err,result)=>{
-      if(err)
-      throw err
-      if(result.length>0)
-      {
-        resolve({data:result,message:"Data fetch",status:'success'})
-      }
-      else{
-        resolve({data:"occuranerror",message:"No data",status:"Not success"})
-      }
-    })
+   db.query(`select `)
   })
 }
 

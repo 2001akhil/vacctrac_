@@ -1,6 +1,6 @@
-
+/*Author:akhil*/
 var db = require("../dbconnector/connection");
-const promise=require('Promise')
+const promise = require("Promise");
 
 const checkMail = (emp_id) => {
   return new promise((resolve, reject) => {
@@ -23,4 +23,4 @@ const checkMail = (emp_id) => {
   });
 };
 
-module.exports=checkMail;
+module.exports = checkMail;

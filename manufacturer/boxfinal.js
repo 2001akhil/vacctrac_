@@ -1,4 +1,5 @@
-const promise=require('Promise');
+/*Author:akhil*/
+const promise = require("Promise");
 var db = require("../dbconnector/connection");
 
 module.exports = {
@@ -6,7 +7,7 @@ module.exports = {
     console.log(data);
     return new promise(async (resolve, reject) => {
       let sql = `INSERT INTO ${boxname}( vaccinename,expiry_d,manufac_d,vaccine_id,empi_id,current_temp,date) VALUES ?`;
-       await db.query(sql, [data], (err, result) => {
+      await db.query(sql, [data], (err, result) => {
         if (err) {
           reject(err);
         } else {
@@ -43,7 +44,9 @@ module.exports = {
   detect_table: (tablename) => {
     console.log(tablename);
     return new promise((resolve, reject) => {
-      db.query(`SELECT * FROM ${tablename} ORDER BY id DESC LIMIT 1`,(err, result) => {
+      db.query(
+        `SELECT * FROM ${tablename} ORDER BY id DESC LIMIT 1`,
+        (err, result) => {
           if (err) {
             reject(err);
             console.log(err);
@@ -63,6 +66,4 @@ module.exports = {
       );
     });
   },
-
 };
-
