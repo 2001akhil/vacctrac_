@@ -44,10 +44,8 @@ box.get('/logout',(req,res)=>{
 })
 
 box.get('/back',verifyLogin,(req,res)=>{
-    
   let sname= req.session.data.name;
   console.log(sname)
-  
    res.render("box/updated/index", {data:sname});
 })
 

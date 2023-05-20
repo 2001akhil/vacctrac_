@@ -126,10 +126,27 @@ module.exports = {
     });
   });
 },
-history_tb:()=>{
+history_tb:(data )=>{
   // SELECT login.*,AWS01.date FROM login inner join AWS01 ON AWS01.empi_id=login.emp_id WHERE login.emp_id=1
   return new promise((resolve,reject)=>{
-   db.query(`select `)
+  //  console.log(`SELECT login.*,AWS01.date FROM login inner join AWS01 ON AWS01.empi_id=login.emp_id WHERE login.emp_id=${data}`)
+   db.query(`SELECT login.*,AWS01.date FROM login inner join AWS01 ON AWS01.empi_id=login.emp_id WHERE login.emp_id=${data}`,(err,result)=>{
+   
+               if(err){
+                reject(console.log(err));
+               }
+               else{
+                
+                 if(result.length>0){
+                  // console.log(result);
+                 
+                  resolve({data:result,status:"successful"})
+                 }
+                 else{
+                  reject({data:null,status:"Error"})
+                 }
+               }
+     });
   })
 }
 

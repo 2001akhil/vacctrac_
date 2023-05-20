@@ -186,8 +186,10 @@ router.post("/front", verifyLogin, async (req, res) => {
   await manufac_final.table_finder(req.body.box).then((response)=>{console.log(response); res.redirect("/vaccine");}).catch((err)=>(console.log(err)))
 });
 
+
+
 router.get('/vaccine_edit',(req,res)=>{
-  res.render('vaccine')
+  res.render("vaccine")
 })
 
 router.get("/vaccine",verifyLogin,async(req, res) => {
@@ -213,8 +215,10 @@ router.get("/history_edit", (req, res) => {
 });
 
 
- router.get("/history", (req, res) => {
-  manufac.history_tb().then((data)=>{console.log(data.data);res.render('history')}).catch((err)=>{console.log(err)})
+ router.get("/history", verifyLogin,(req, res) => {
+  
+   manufac.history_tb(req.session.data.emp_id).then((data)=>{console.log(data.data);res.render('history')}).catch((err)=>{console.log(err)})
+
  });
 
 
