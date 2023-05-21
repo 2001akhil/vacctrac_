@@ -9,6 +9,7 @@ var db=require('./dbconnector/connection')
 const bodyParser = require('body-parser');
 const cors=require("cors")
 var hbs=require('express-handlebars')
+const mongo = require("./dbconnector/mongo._connection");
 
 var indexRouter = require("./routes/manufacturer");
 var usersRouter = require('./routes/box');
