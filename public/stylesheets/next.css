@@ -1,3 +1,4 @@
+/* Updated buttons on 21/05/23 */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 * {
@@ -90,7 +91,11 @@ body {
       display: block;
       margin-bottom: 10px;
 }
-
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+  }  
 .formbold-btn {
       font-size: 16px;
       border-radius: 5px;
@@ -102,7 +107,7 @@ body {
       cursor: pointer;
       /* margin-top: 25px; */
       height: 50px;
-      margin-left: 60%;
+      /* margin-left: 60%; */
       transition: all 0.3s ease;
       background: linear-gradient(135deg, #4ac5ba, #06201e);
 }
@@ -126,7 +131,7 @@ body {
       font-size: 16px;
       font-weight: 500;
       letter-spacing: 1px;
-      margin-top: 60px;
+      /* margin-top: 60px; */
       margin-left: 18px;
       cursor: pointer;
       transition: all 0.3s ease;
