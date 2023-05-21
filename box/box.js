@@ -35,7 +35,7 @@ useridentifier: (sessioname) => {
       } else {
         if (result.length > 0) {
           db.query(
-            `SELECT (ir1+ir2) AS sum_value FROM ${sessioname} ORDER BY id DESC LIMIT 1`,
+            `SELECT (ir1+ir2+ir3+ir4) AS sum_value FROM ${sessioname} ORDER BY id DESC LIMIT 1`,
             (err, sumResult) => {
               if (err) {
                 console.log(err);
@@ -47,8 +47,7 @@ useridentifier: (sessioname) => {
                   status: "Datafetched",
                 });
               }
-            }
-          );
+            });
         } else {
           resolve({ data: "Not to be fetched", status: "errorinfetch" });
         }

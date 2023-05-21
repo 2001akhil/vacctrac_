@@ -101,6 +101,7 @@ module.exports = {
       vaccine_id VARCHAR(255),
       empi_id VARCHAR(255),
       current_temp VARCHAR(255),
+      unit VARCHAR(255),
       date VARCHAR(255)
     )`;
     
@@ -126,29 +127,12 @@ module.exports = {
     });
   });
 },
-history_tb:(data )=>{
-  // SELECT login.*,AWS01.date FROM login inner join AWS01 ON AWS01.empi_id=login.emp_id WHERE login.emp_id=1
-  return new promise((resolve,reject)=>{
-  //  console.log(`SELECT login.*,AWS01.date FROM login inner join AWS01 ON AWS01.empi_id=login.emp_id WHERE login.emp_id=${data}`)
-   db.query(`SELECT login.*,AWS01.date FROM login inner join AWS01 ON AWS01.empi_id=login.emp_id WHERE login.emp_id=${data}`,(err,result)=>{
-   
-               if(err){
-                reject(console.log(err));
-               }
-               else{
-                
-                 if(result.length>0){
-                  // console.log(result);
-                 
-                  resolve({data:result,status:"successful"})
-                 }
-                 else{
-                  reject({data:null,status:"Error"})
-                 }
-               }
-     });
-  })
-}
+// history_tb:(data)=>{
+//   return new promise((resolve,reject)=>{
+//     // db.query(`select * from `)
+
+//   })
+// }
 
 
   

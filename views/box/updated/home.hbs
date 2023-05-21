@@ -1,37 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+
+{{!-- //updated on 21/05/23// --}}
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../stylesheets/box/home.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../stylesheets/box/home.css">
+  <title>Document</title>
 </head>
+
 <body>
-    <button onclick="window.location.href='/box/back'"><i class="fa-solid fa-arrow-left fa-2xl" style="color: #fefefe;"></i></button>
-    <h3>Box Details</h3>
-    <div class="contain">
-        <div class="details">
-        <form class="details">
-          <label class="box_info">BOX ID</label>
-          <input class="available_units" value='{{boxid}}'>
-          <label class="box_info">AVAILABLE UNITS</label>
-          <input class="available_units" value='{{sum}}'>
-        </form>
-        </div>
-      </div>
-      <div class="box">
-        <form class="boxes">
-        <label class="current" for="temperature"><b>Current Temperature</b></label>
-        <input class="current_values" value="{{temp}} &#8451">
-        </form>
+  <button onclick="window.location.href='/box/back'"><i class="fa-solid fa-arrow-left fa-2xl"
+      style="color: #fefefe;"></i></button>
+  <h3>Box Details</h3>
+  <div class="contain">
+    <div class="details">
+      <form class="details">
+        <label class="box_info">BOX ID</label>
+        <input class="available_units" value='{{boxid}}'>
+        <label class="box_info">AVAILABLE UNITS</label>
+        <input class="available_units" value='{{sum}}'>
+      </form>
     </div>
-	<div class="box">
-        <form class="boxes">
-        <label class="current" for="location"><b>Current Location</b></label>
-        <input class="current_values">
-    </div>
-    </body>
+  </div>
+  <div class="box">
+    <form class="boxes">
+      <label class="current" for="temperature"><b>Current Temperature</b></label>
+      <input class="current_values" value="{{temp}} &#8451">
+    </form>
+  </div>
+  <div class="box">
+    <form class="boxes">
+      <label class="current" for="location"><b>Current Location</b></label>
+      <input class="current_values">
+  </div>
 </body>
-</html>
+</body>
+

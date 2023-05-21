@@ -195,14 +195,13 @@ router.get('/vaccine_edit',(req,res)=>{
 router.get("/vaccine",verifyLogin,async(req, res) => {
    
    const box_name = req.session.box_name;
-   try{await manufac_final.table_finder(box_name).then((data) => {console.log(data.data);manufac_final.detect_table(data.data).then((data)=>{console.log(data.data.tempreature),res.render("vaccine",{datatemp:data.data.tempreature,datair1:data.data.ir1,datair2:data.data.ir2});}).catch((err)=>{console.log(err)});}).catch((err)=>{console.log(err)})}
-   catch(err){console.log(err)}
+   try{await manufac_final.table_finder(box_name).then((data) => {console.log(data.data);manufac_final.detect_table(data.data).then((data)=>{console.log(data.vaccine_count);res.render("vaccine",{datatemp:data.data.tempreature,sum:data.vaccine_count});}).catch((err)=>{console.log(err)});}).catch((err)=>{console.log(err)})}catch(err){console.log(err)}
 });
 router.post('/vaccine',async(req,res)=>{
   const empi_id = req.session.data.emp_id;
   const box_name = req.session.box_name;
   console.log(box_name);
-let data=[[req.body.name,req.body.id1,req.body.dob,req.body.dobb,empi_id,req.body.temp,formattedDate]];
+let data=[[req.body.name,req.body.id1,req.body.dob,req.body.dobb,empi_id,req.body.temp,req.body.units,formattedDate]];
 await manufac_final.box(box_name,data).then((data)=>{console.log(data.message);res.redirect('/back')}).catch((err)=>{console.log(err);res.redirect('/vaccine')})
 
 

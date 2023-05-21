@@ -77,6 +77,10 @@ function home_handler(req, res) {
   }
 box.get("/home", verifyLogin, home_handler);
 
+function history(req,res){
+
+
+}
 box.get('/history',(req,res)=>{
   res.render('box/updated/history')
 })
