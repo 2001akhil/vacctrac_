@@ -1,3 +1,4 @@
+/* updated on 21/5/23 */
 body{
     background-color: #005b96;;
     color:  #ffffff;
@@ -23,10 +24,28 @@ button{
 form.details{
     display: inline;
 }
-input{
-    margin-right: 50px;
-     background-color:transparent;
-    border: 0px;
+label.box_info{
+    font-size: larger;
+    font-weight: bolder;
+}
+input.available_units{
+    margin-left: 20px;
+    background-color:transparent;
+    border: 0px transparent;
+    width: 100px;
+    margin-top: 10px;
+    font-size: larger;
+    font-weight: bolder;
+    color: rgb(255, 0, 0);
+}
+input.current_values{
+    margin-left: 20px;
+    background-color:transparent;
+    border: 0px transparent;
+    width: 100px;
+    margin-top: 10px;
+    font-size: larger;
+    color: rgb(166, 8, 8);
 }
 .box {
     width: 200px;
