@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-//database name is vacctrac
+//database_name:vacctrac
 
 const url= "mongodb://localhost/vacctrac";
 
