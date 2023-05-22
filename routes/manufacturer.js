@@ -179,6 +179,7 @@ router.post("/front", verifyLogin, async (req, res) => {
       req.body.empid,
       req.body.password,
       sessionData,
+      formattedDate,
     ],
   ]; 
   manufac.createDb(req.body.box).then((data) => {console.log(data);}).catch((err) => {console.log(err);});
@@ -215,9 +216,7 @@ router.get("/history_edit", (req, res) => {
 
 
  router.get("/history", verifyLogin,(req, res) => {
-  
-   manufac.history_tb(req.session.data.emp_id).then((data)=>{console.log(data.data);res.render('history')}).catch((err)=>{console.log(err)})
-
+  manufac.history_data(req.session.data.emp_id).then((data)=>{console.log(data.data); res.render("history");}).catch((err)=>{console.error(err)})
  });
 
 

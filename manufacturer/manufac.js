@@ -4,6 +4,7 @@ const { resolve } = require("path");
 const promise = require("Promise");
 var db = require("../dbconnector/connection");
 const { Namespace } = require("socket.io");
+const { rejects } = require("assert");
 
 var array = []; //temporary hold the inactive status from the different session://for test purpose
 
@@ -72,7 +73,7 @@ module.exports = {
     return new promise(async(resolve,reject)=>{
     
        await db.query(
-         `INSERT INTO boxdetails(name,boxid,empid,password,manufac_name) VALUES ?`,
+         `INSERT INTO boxdetails(name,boxid,empid,password,manufac_name,date) VALUES ?`,
          [data],
          (err, result) => {
            if (err) {
@@ -110,29 +111,43 @@ module.exports = {
         reject(err);
       } else {
         resolve({ data: result, message: "Table created"});
-      //  async function updatedata() {
-      //    let sql = `UPDATE machine_name SET flag="Active"  WHERE name=?`;
-      //    try {
-      //      const result = await db.query(sql,dbname);
-      //      console.log("Status Active");
-      //      module.exports={result}
-      //    } catch (err) {
-      //      console.log(err);
-      //    }
-      //  }
-      //  updatedata();
+       async function updatedata() {
+         let sql = `UPDATE machine_name SET flag="Active"  WHERE name=?`;
+         try {
+           const result = await db.query(sql,dbname);
+           console.log("Status Active");
+           module.exports={result}
+         } catch (err) {
+           console.log(err);
+         }
+       }
+       updatedata();
 
 
       }
     });
   });
 },
-// history_tb:(data)=>{
-//   return new promise((resolve,reject)=>{
-//     // db.query(`select * from `)
+history_data:(id)=>{
+  db.query(`select * from box where empid=${id}`,(err,result)=>{
+    if(err){
+      reject(err);
+      console.error(err);
 
-//   })
-// }
+    }
+    else{
+      if(result.length>0){
+        resolve({data:result[0],status:"Data_fetched"});
+
+      }
+      else{
+      reject({data:null,status:"NO_Data"})
+
+      }
+    }
+
+  })
+}
 
 
   
