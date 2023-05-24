@@ -12,9 +12,9 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3001');
+var port = normalizePort(process.env.PORT || '4000');
 
-console.log(`Team vacctrac your port is listening on:${port}`);
+// console.log(`Team vacctrac your port is listening on:${port}`);
 app.set('port', port);
 //console.log("Express server listening on port %d", app.address().port)
 
