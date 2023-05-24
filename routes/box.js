@@ -23,6 +23,7 @@ box.post('/login_box',async(req, res) => {
 try{
   const data= await login(name,password)
   if(data.status=="set"){
+    console.log("data")
   req.session.loggedIn=true;
   req.session.data=data.data;
   let sname = req.session.data.name;
@@ -77,17 +78,27 @@ function home_handler(req, res) {
   }
 box.get("/home", verifyLogin, home_handler);
 
+
 function history(req,res){
-
-
+  boxes
+    .view_vaccine_taken()
+    .then((data) => {
+      console.log(data.data.DATE_IR1);
+      res.render("box/updated/history", { IR1: data.data.DATE_IR1,IR2:data.data.DATE_IR2 });
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 }
-box.get('/history',(req,res)=>{
-  res.render('box/updated/history')
-})
+box.get('/history',verifyLogin,history)
 
 box.get('/user',(req,res)=>{
-   res.render("box/updated/user");
+  boxes.user().then((data)=>{console.log(data.data); res.render("box/updated/user");}).catch((err)=>{console.log(err);})
 
+})
+
+box.get('/vaccinedetails',(req,res)=>{
+  boxes.vaccinedetails().then((data)=>{console.log(data.data);res.status(200).json(data.data)}).catch((err)=>{console.error(err)})
 })
 
 

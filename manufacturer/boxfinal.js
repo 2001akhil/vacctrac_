@@ -51,7 +51,7 @@ detect_table: (tablename) => {
       } else {
         if (results.length > 0) {
           db.query(
-            `SELECT (ir1 + ir2 + ir3 + ir4) AS sum_value FROM ${tablename} ORDER BY id DESC LIMIT 1`,
+            `SELECT (ir1+ir2) AS sum_value FROM ${tablename} ORDER BY id DESC LIMIT 1`,
             (err, sumResult) => {
               if (err) {
                 console.log(err);

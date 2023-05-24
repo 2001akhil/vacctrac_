@@ -50,8 +50,13 @@
   <div class="box">
     <form class="boxes">
       <label class="current" for="location"><b>Current Location</b></label>
-      <input class="current_values">
+      <input class="current_values" value="GPSFAILED!">
   </div>
 </body>
 </body>
+<script>
+    setTimeout(function () {
+      location.reload();
 
+    }, 2000);
+  </script>

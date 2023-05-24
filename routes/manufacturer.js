@@ -139,7 +139,7 @@ router.post('/user',(req,res)=>{
 })
 
 // //============passing null to the db
-// router.post("/user", (req, res) => {
+// router.put("/user", (req, res) => {
 //   // res.render("user");
 
 //     let session = req.session.data.emp_id;
@@ -153,7 +153,7 @@ router.post('/user',(req,res)=>{
 //       console.error(err);
 //       res.redirect('/user')
 
-//     }20
+//     }
 // });
 
 
@@ -216,12 +216,13 @@ router.get("/history_edit", (req, res) => {
 
 
  router.get("/history", verifyLogin,(req, res) => {
-  manufac.history_data(req.session.data.emp_id).then((data)=>{console.log(data.data); res.render("history");}).catch((err)=>{console.error(err)})
+
+  manufac.history_data(req.session.data.emp_id).then((data)=>{console.log(data.data.date); res.render("history",{date:data.data.date,boxid:data.data.boxid,vaccinename:data.data.vaccinename});}).catch((err)=>{console.error(err)})
  });
 
 
 
-//============================================================================
+//======================================================================================================================================================================================
 router.get("/back", verifyLogin, (req, res) => {
  
   let data = req.session.data.name;
