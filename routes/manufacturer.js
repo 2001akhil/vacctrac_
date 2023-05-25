@@ -217,7 +217,7 @@ router.get("/history_edit", (req, res) => {
 
  router.get("/history", verifyLogin,(req, res) => {
 
-  manufac.history_data(req.session.data.emp_id).then((data)=>{console.log(data.data.date); res.render("history",{date:data.data.date,boxid:data.data.boxid,vaccinename:data.data.vaccinename});}).catch((err)=>{console.error(err)})
+  manufac.history_data(req.session.data.emp_id).then((data)=>{console.log(data.data.date); res.render("history",{date:data.data.date,boxid:data.data.boxid,vaccinename:data.data.vaccinename});}).catch((err)=>{console.error(err);res.render("/history");})
  });
 
 

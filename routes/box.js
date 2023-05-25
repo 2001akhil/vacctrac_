@@ -92,15 +92,28 @@ function history(req,res){
 }
 box.get('/history',verifyLogin,history)
 
+function user(req,res){
+boxes
+  .user()
+  .then((data) => {
+    console.log(data.data);
+    res.render("box/updated/user");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+}
 box.get('/user',(req,res)=>{
-  boxes.user().then((data)=>{console.log(data.data); res.render("box/updated/user");}).catch((err)=>{console.log(err);})
+  
 
 })
 
-box.get('/vaccinedetails',(req,res)=>{
-  boxes.vaccinedetails().then((data)=>{console.log(data.data);res.status(200).json(data.data)}).catch((err)=>{console.error(err)})
+box.get('/vaccinedetails',verifyLogin,(req,res)=>{
+  boxes.vaccinedetails().then((data)=>{console.log(data.data);res.render("box/updated/vaccine",{vacciname:data.data.vaccinename,expirydate:data.data.expiry_d,manufac_d:data.data.manufac_d});}).catch((err)=>{console.error(err)})
 })
+// box.get('/vaccinedetails_edit',(req,res)=>{
 
+// })
 
 
 module.exports=box;
