@@ -5,7 +5,7 @@ let port = 8000;
 var app = express();
 
 app.post('/web3', async (req, res) => {
-  res.sendFile(path.join(__dirname,'./public','index.html'));
+//   res.sendFile(path.join(__dirname,'./public','index.html'));
    //const provider = new Web3.providers.HttpProvider('http://localhost:8080'); // Local Ethereum node URL
   const provider = new Web3.providers.HttpProvider('https://eth-sepolia.g.alchemy.com/v2/d69A7GzFDy43ReuNG7xuzSIC9Kp8gPGw');
   
