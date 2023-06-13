@@ -31,6 +31,8 @@ module.exports = {
       });
     });
   },
+
+  
   data_replace: (fetch_front) => {
     return new promise(async (resolve, reject) => {
       let sql = "select * from machine_name where name= ?";

@@ -46,7 +46,7 @@ module.exports = {
                 status: "SET",
               });
             } else {
-              resolve({ result: "nodata", message: "error", status: "NOTSET" });
+              resolve({ result:null, message: "error", status: "NOTSET" });
             }
           }
         }

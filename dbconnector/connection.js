@@ -28,7 +28,8 @@ var connetion = mysql.createConnection({
 });
 connetion.connect((err)=>{
      if(err){
-        console.log(err);
+    
+        console.error("Database_connected" + err);
      }
      else{
         console.log("Database_connected");
