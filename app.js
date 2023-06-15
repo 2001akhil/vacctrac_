@@ -13,7 +13,7 @@ const mongo = require("./dbconnector/mongo._connection");
 
 var indexRouter = require("./routes/manufacturer");
 var usersRouter = require('./routes/box');
-
+var adminrouter=require('./routes/customer')
 
 
 
@@ -61,6 +61,7 @@ app.use(cors());
 // });
 app.use('/', indexRouter);
 app.use('/box', usersRouter);
+app.use("/admin", adminrouter);
 
 app.use(function(req, res, next) {
   next(createError(404));
