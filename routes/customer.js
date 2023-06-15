@@ -7,9 +7,10 @@ API.get('/choice',(req,res)=>{
 })
 
 API.get('/details',(req,res)=>{
-  res.render('customer/details');
+  res.render('customer/details')
 
 })
+
 
 API.get('/login',(req,res)=>{
   res.render('customer/login');
