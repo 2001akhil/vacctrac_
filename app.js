@@ -8,9 +8,7 @@ var hbs=require('express-handlebars');
 var db=require('./dbconnector/connection')
 const bodyParser = require('body-parser');
 const cors=require("cors")
-var hbs=require('express-handlebars')
-const mongo = require("./dbconnector/mongo._connection");
-
+var hbs=require('express-handlebars');
 var indexRouter = require("./routes/manufacturer");
 var usersRouter = require('./routes/box');
 var adminrouter=require('./routes/customer')
@@ -23,22 +21,7 @@ const { hasSubscribers } = require('diagnostics_channel');
 const { cursorTo } = require('readline');
 var app = express();
 
-/*========http reciving data from opencv========================*/
-// app.use(bodyParser.json())
-// app.post('/data', (req, res) => {
-//   console.log(req.body.data);
-//   var data=req.body.data;
-//   const sql='INSERT INTO vaccine_details'
-//   //  const sql = 'INSERT INTO vaccine_details (vaccinename,Expiry_d,Manufact_d,company_n) VALUES (?)';
-  
-//   // // console.log(values)
-//   // db.query(sql,values,(err,result)=>{
-//   //    if (err) throw err;
-//   // console.log('Data inserted successfully');
-//   // })
-//   // res.send('Data received');
-// });
-/*===========endfetching data==========*/
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -53,15 +36,10 @@ app.use(session({secret:"key",cookie:{ maxAge: 3 * 24 * 60 * 60 * 1000},resave: 
 app.use(express.static("public"));
 
 app.use(cors());
-// app.post('/main', function(req, res) {
-//   // console.log('IR Value: ' + req.body.value);
-//   // res.send('Received IR value: ' + req.body.value);
-//    console.log(req.body)
-//   res.status(200).send("Hi")
-// });
+
 app.use('/', indexRouter);
 app.use('/box', usersRouter);
-app.use("/admin", adminrouter);
+app.use('/admin', adminrouter);
 
 app.use(function(req, res, next) {
   next(createError(404));
