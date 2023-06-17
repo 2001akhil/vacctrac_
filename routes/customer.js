@@ -1,25 +1,15 @@
 var express = require("express");
 var API = express.Router();
-var db = require("../dbconnector/connection");
-
-API.get('/choice',(req,res)=>{
-  res.render('customer/choice')
-})
-
-API.get('/details',(req,res)=>{
-  res.render('customer/details')
-
-})
-
+var customer=require('./customer/view');
 
 API.get('/login',(req,res)=>{
-  res.render('customer/login');
-
+  res.render('')
 })
 
-API.get('/loc',(req,res)=>{
-  res.render('customer/loc')
+API.get('/customer',(req,res)=>{
+ customer.view().then((data)=>{}).catch(()=>{})
 })
+
 
 module.exports=API
 

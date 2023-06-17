@@ -11,7 +11,7 @@ const cors=require("cors")
 var hbs=require('express-handlebars');
 var indexRouter = require("./routes/manufacturer");
 var usersRouter = require('./routes/box');
-var adminrouter=require('./routes/customer')
+var customer=require('./routes/customer')
 
 
 
@@ -39,7 +39,7 @@ app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/box', usersRouter);
-app.use('/admin', adminrouter);
+app.use('/customer',customer);
 
 app.use(function(req, res, next) {
   next(createError(404));
