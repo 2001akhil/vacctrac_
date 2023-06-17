@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <title>Document</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="stylesheets/cust.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
+
+<head>
+  <title>Document</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="cust.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="cust.js"></script>
+</head>
+
 <body>
   <section class="home-section">
     <nav>
@@ -15,7 +18,7 @@
       </div>
       <div class="btn">
         <button><a href="page.html">GO BACK</a></button>
-        <button><a href="">RESET</a></button>
+        <button onclick="reload()"><a>RESET</a></button>
       </div>
     </nav>
 
@@ -23,116 +26,43 @@
       <div class="s-boxes">
         <div class="r-sales box">
           <div class="s-details">
-            <ul class="details">
-              <li class="topic">Date</li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
+            <ul class="details" id="Date">
+              <li class="topic" >Date</li>
             </ul>
-            <ul class="details">
-            <li class="topic">BOX ID</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-             <li></li>
-          </ul>
-          <ul class="details">
-            <li class="topic">Vaccine ID</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-             <li></li>
-             <li></li>
-          </ul>
-          <ul class="details">
-            <li class="topic">Vaccine name</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-             <li></li>
-            <li></li>
-          </ul>
-          <ul class="details">
-            <li class="topic">Count</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <ul class="details">
-            <li class="topic">Manufacturing Date</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-             <li></li>
-            <li></li>
-          </ul>
-          <ul class="details">
-            <li class="topic">Expiry Date</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-             <li></li>
-            <li></li>
-          </ul>
-          <ul class="details">
-            <li class="topic">Location</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-             <li></li>
-            <li></li>
-          </ul>
-          <ul class="details">
-            <li class="topic">Status</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-             <li></li>
-            <li></li>
-          </ul>
-        </div>
-  </section>
-</body>
-</html>
+            <ul class="details" id="BoxID">
+              <li class="topic">BOX ID</li>
+            </ul>
+            <ul class="details" id="VaccineID">
+              <li class="topic" >Vaccine ID</li>
+            </ul>
+            <ul class="details" id="VaccineName">
+              <li class="topic">Vaccine name</li>
+            </ul>
+            <ul class="details" id="Count">
+              <li class="topic">Count</li>
+            </ul>
+            <ul class="details" id="ManufacturingDate">
+              <li class="topic">Manufacturing Date</li>
+            </ul>
+            <ul class="details" id="ExpiryDate">
+              <li class="topic">Expiry Date</li>
+            </ul>
+            <ul class="details" id="Location">
+              <li class="topic">Location</li>
+            </ul>
+            <ul class="details" id="Status">
+              <li class="topic">Status</li>
 
+            </ul>
+
+          </div>
+          <div align="right">
+            <button class="get_button" onclick="get_one()">One More Record</button>
+            <button class="get_button" onclick="get_all()">Get All Record</button>
+          </div>
+  </section>
+
+
+</body>
+
+</html>
