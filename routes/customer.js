@@ -1,6 +1,6 @@
 var express = require("express");
 var API = express.Router();
-var customer=require('./customer/view');
+var customer=require('../customer/view');
 
 API.get('/login',(req,res)=>{
   res.render('')
