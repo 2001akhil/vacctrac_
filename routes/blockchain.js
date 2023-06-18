@@ -1,10 +1,11 @@
-const express = require('express');
+
 const Web3 = require('web3');
 
-let port = 8000;
-var app = express();
+const insert_data=async(vacccount,vaccname,manuname,location,temperature)=>{
 
-app.post('/web3', async (req, res) => {
+
+
+// app.post('/web3', async (req, res) => {
 //   res.sendFile(path.join(__dirname,'./public','index.html'));
    //const provider = new Web3.providers.HttpProvider('http://localhost:8080'); // Local Ethereum node URL
   const provider = new Web3.providers.HttpProvider('https://eth-sepolia.g.alchemy.com/v2/d69A7GzFDy43ReuNG7xuzSIC9Kp8gPGw');
@@ -87,11 +88,11 @@ app.post('/web3', async (req, res) => {
   const privateKey = '43f2c880a7841ba2f82b236f6740fe9af1c1feda39d357a393421cfa31c0ada5';
 
   // Prepare the data to be inserted into the contract
-  const vacccount = 'Account1';
-  const vaccname = 'Vaccine1';
-  const manuname = 'Manufacturer1';
-  const location = 'Location1';
-  const temperature = 'Temperature1';
+//   const vacccount = 'Account1';
+//   const vaccname = 'Vaccine1';
+//   const manuname = 'Manufacturer1';
+//   const location = 'Location1';
+//   const temperature = 'Temperature1';
 
   // Get the account object from the private key
   const account = web3.eth.accounts.privateKeyToAccount(privateKey);
@@ -118,8 +119,9 @@ app.post('/web3', async (req, res) => {
     console.error('Error occurred:', error);
     res.status(500).send(error);
   }
-});
+}
+// });
 
-app.listen(port, () => {
-  console.log(`port is listening ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`port is listening ${port}`);
+// });

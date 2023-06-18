@@ -8,9 +8,9 @@ module.exports = {
           reject(err);
         } else {
           if (result.length > 0) {
-            resolve({});
+            resolve({status:"Data_accessed"});
           } else {
-            reject({});
+            reject({ERROR:"fetching something to wrong"});
           }
         }
       });
