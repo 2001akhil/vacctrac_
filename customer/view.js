@@ -8,12 +8,14 @@ module.exports = {
           reject(err);
         } else {
           if (result.length > 0) {
-            resolve({status:"Data_accessed"});
+            resolve({data:result[0],status:"Data_fetched"});
           } else {
-            reject({ERROR:"fetching something to wrong"});
+            reject({data:null,ERROR:"fetching something to wrong"});
           }
         }
       });
     });
   },
+  
+
 };

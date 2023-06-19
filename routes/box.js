@@ -6,6 +6,7 @@ const login = require("../box/box_login");
 var db = require("../dbconnector/connection");
 const { route } = require('./manufacturer');
 const boxes=require('../box/box')
+const sensor_updates=require('../box/date_fetcherir')
 
 const verifyLogin=(req,res,next)=>{
   if(req.session.loggedIn){next();}
@@ -54,42 +55,32 @@ box.get('/back',verifyLogin,(req,res)=>{
 
 function home_handler(req, res) {
   boxes
-    .match(req.session.data.name)
-    .then((resolve) => {
-      console.log(resolve);
-      boxes
-        .useridentifier(resolve.data)
-        .then((data) => {
-          console.log(data.data.tempreature);
-          console.log(data.sum)
-          res.render("box/updated/home", {
-            boxid: req.session.data.boxid,
-            temp: data.data.tempreature,
-            sum: data.sum, 
-          });
-        })
-        .catch((err) => {
-          console.error(err);
-        });
+    .vaccine_data(req.session.data.name)
+    .then((data) => {
+      console.log(data.tempreature);
+      res.render("box/updated/home", { sum: data.data,sname:req.session.data.name,tempreature:data.temp });
     })
     .catch((err) => {
       console.log(err);
     });
-  }
+}
+
+
 box.get("/home", verifyLogin, home_handler);
 
 
-function history(req,res){
-  boxes
-    .view_vaccine_taken()
+
+function history(req, res) {
+  sensor_updates
+    .ir1(req.session.data.name)
     .then((data) => {
-      console.log(data.data.DATE_IR1);
-      res.render("box/updated/history", { IR1: data.data.DATE_IR1,IR2:data.data.DATE_IR2 });
+      res.render("box/updated/history", { datair1: data.data,datair2:data.datas});
     })
     .catch((err) => {
       console.error(err);
     });
 }
+
 box.get('/history',verifyLogin,history)
 
 function user(req,res){

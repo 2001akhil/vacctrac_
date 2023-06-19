@@ -83,7 +83,7 @@ router.post('/login', async (req, res) => {
           req.session.loggedIn = true;
           req.session.data = data.data;
           let sessionData = req.session.data.name;
-          // module.exports = { sessionData: sessionData };
+          
            sessionname.count(sessionData).then((data)=>{console.log(data); }).catch((err)=>console.log(err))
           sessionname.count_entries(sessionData).then((data)=>{console.log(data.data);res.render("page", { sessionData: sessionData,data:data.data });}).catch((err)=>{console.log(err)})
                  
@@ -232,40 +232,9 @@ router.get("/back", verifyLogin, (req, res) => {
 router.get('/logout',(req,res)=>{
   req.session.destroy(); 
   res.redirect("/");
-  
-  // try{
-  //   let sessionname = req.session.data.name;
-  //  console.log(sessionname);
-  //   sessionname.update_status(sessionname).then((data)=>{console.log(data);}).catch((err)=>{console.log(err)})
-  // }
-  // catch(err)
-  // {
-  //   req.session.destroy()
-  //  res.redirect("/");
-  // }
     
 })
-//==
-//error
 
-//
-// router.get('/next',function(req, res) {
-  
-//   res.render('next', { title: 'Express' });
-// });
-// // router.get('/slot', function(req, res) {
-// //  let data=req.session.data;
-// // //   var data={"data": {
-// // //     "Vaccine Name": "'Covaxin'",
-// // //     "Expiry Date": "'23-05-2024'",
-// // //     "Manufacturing Date": "'12-05-2022'",
-// // //     "Company Name": "'UltraShield'",
-// // //     "Vaccine Id": "'abcd'"
-// // // }}
-// //   res.status(200).json(data)
-// //   // res.render('slot', { title: 'Dashboard' });
-// // });
-//=======================================================================
 
 
 

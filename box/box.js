@@ -57,27 +57,44 @@ module.exports = {
     });
   },
 
-  sensor_history: () => {
-    return new promise((resolve, reject) => {
+  vaccine_data: (sensorvalue) => {
+    console.log(sensorvalue);
+    return new Promise((resolve, reject) => {
       db.query(
-        `SELECT * FROM sensordata WHERE ir1 = 0 or ir2=0 ORDER BY id DESC LIMIT 1`,
-        (err, result) => {
-          if (err) {
-            console.error(err);
-            reject(err);
+        `SELECT ir1value.ir, ir2value.ir, (ir1value.ir + ir2value.ir) AS sumoftwo
+       FROM ir1value
+       INNER JOIN ir2value ON ir1value.name = ir2value.name
+       WHERE ir1value.name = ? AND ir2value.name = ?`,
+        [sensorvalue, sensorvalue], // Use placeholders to prevent SQL injection
+        (error, result) => {
+          if (error) {
+            reject(error);
           } else {
-            // console.log(result[0])
             if (result.length > 0) {
-              console.log(result[0].date_ir1);
-              resolve({ data: result[0].date_ir1 });
+              db.query(
+                `SELECT tempreature FROM sensordata ORDER BY id DESC LIMIT 1`,
+                (err, dataResult) => {
+                  if (err) {
+                    reject(err);
+                  } else {
+                    const sumoftwo = result[0].sumoftwo;
+                    const temp = dataResult[0].tempreature;
+                    console.log(temp);
+                    console.log(sumoftwo);
+                    resolve({ data: sumoftwo, temp: temp });
+                  }
+                }
+              );
             } else {
-              resolve({ data: null, status: "Data_not_fetched" });
+              resolve(0); // Return 0 if no result found
             }
           }
         }
       );
     });
   },
+
+  
 
   box: (id) => {
     return new promise((resolve, reject) => {
@@ -112,22 +129,19 @@ module.exports = {
     });
   },
 
-  vaccinedetails:()=>{
-    return new promise((resolve,reject)=>{
-      db.query(`select * from aws01`,(err,result)=>{
-        if(err){
+  vaccinedetails: () => {
+    return new promise((resolve, reject) => {
+      db.query(`select * from aws01`, (err, result) => {
+        if (err) {
           console.log(err);
-        }
-        else{
-          if(result.length>0){
-            resolve({data:result[0]})
-          }
-          else{
-            reject({data:"null"})
+        } else {
+          if (result.length > 0) {
+            resolve({ data: result[0] });
+          } else {
+            reject({ data: "null" });
           }
         }
-      })
-    })
-
-  }
+      });
+    });
+  },
 };
