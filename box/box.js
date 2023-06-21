@@ -131,12 +131,13 @@ module.exports = {
 
   vaccinedetails: () => {
     return new promise((resolve, reject) => {
-      db.query(`select * from aws01`, (err, result) => {
+      db.query(`SELECT * FROM login where name="Vacctrac"`, (err, result) => {
         if (err) {
           console.log(err);
         } else {
           if (result.length > 0) {
-            resolve({ data: result[0] });
+            console.log(result[0])
+            resolve({ data: result[0].name,datas:result[0].email,datass:result[0].dob });
           } else {
             reject({ data: "null" });
           }

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 
@@ -36,33 +34,21 @@
 
                   <div class="formbold-mb-34">
                         <label for="temp" class="formbold-form-label">Temperature (in degrees)</label>
-                        <input type="text" name="temp" id="temp" value="{{datatemp}}" class="formbold-form-input formbold-mb-3" />
+                        <input type="text" name="temp" id="temp" value={{datatemp}} class="formbold-form-input formbold-mb-3" />
                   </div>
 
                   <div class="formbold-mb-35">
                         <label for="units" class="formbold-form-label">Available Units</label>
-                        <input type="text" name="units" value="{{sum}}" id="units" class="formbold-form-input formbold-mb-3" />
+                        <input type="text" name="units" value={{sum}} id="units" class="formbold-form-input formbold-mb-3" />
                   </div>
 
                  <div class="button-wrapper">
                         <button class="formbold-btn"> GO BACK</button>
                         <button class="button2">SUBMIT</button>
-
-                 {{!-- <div class="button-wrapper">
-                    <button class="formbold-btn"> GO BACK</button>
-                    <button class="button2">SUBMIT</button> --}}
-
                   </div>
             </form>
       </div>
-      <script>
-            setTimeout(function(){
-                  location.reload();
-
-            },17500);
-            </script>
-
-     
+    
 </body>
 
 </html>

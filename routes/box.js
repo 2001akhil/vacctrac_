@@ -83,21 +83,14 @@ function history(req, res) {
 
 box.get('/history',verifyLogin,history)
 
-function user(req,res){
-boxes
-  .user()
-  .then((data) => {
-    console.log(data.data);
-    res.render("box/updated/user");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-}
-box.get('/user',(req,res)=>{
+
+box.get('/user',verifyLogin,(req,res)=>{
+  boxes.vaccinedetails().then((data)=>{res.render("box/updated/user", { data:data.data, datas:data.datas,datass:data.datass});})
+  
+})
   
 
-})
+
 
 box.get('/vaccinedetails',verifyLogin,(req,res)=>{
   boxes.vaccinedetails().then((data)=>{console.log(data.data);res.render("box/updated/vaccine",{vacciname:data.data.vaccinename,expirydate:data.data.expiry_d,manufac_d:data.data.manufac_d});}).catch((err)=>{console.error(err)})

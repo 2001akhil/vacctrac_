@@ -10,6 +10,7 @@ const session = require('express-session');
 const { captureRejectionSymbol } = require('nodemailer/lib/xoauth2');
 const { compareSync } = require('bcrypt');
 const { formattedDate, formattedTime } = require("../dateandtime");
+const blockchain=require('../blockchain/blockchain')
 
 
 
@@ -203,6 +204,7 @@ router.post('/vaccine',async(req,res)=>{
   const box_name = req.session.box_name;
   console.log(box_name);
 let data=[[req.body.name,req.body.id1,req.body.dob,req.body.dobb,empi_id,req.body.temp,req.body.units,formattedDate]];
+// let insert_blockchain = await blockchain(req.body.units, req.body.name,"choondacherry",req.body.temp);
 await manufac_final.box(box_name,data).then((data)=>{console.log(data.message);res.redirect('/back')}).catch((err)=>{console.log(err);res.redirect('/vaccine')})
 
 

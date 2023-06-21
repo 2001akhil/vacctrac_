@@ -3,15 +3,14 @@ var API = express.Router();
 var customer=require('../customer/view');
 var authentication=require('../customer/auth');
 var session=require('express-session');
+var boxcount=require('../box/box')
 
 API.get('/login',async(req,res)=>{
  const ph=req.body.phone;
 try{
   const auth = await authentication(ph);
   if(auth.status=="SUCCESS"){
-    res.render('./');
-
-
+    res.render('/');
 
   }
   else{
@@ -26,11 +25,15 @@ res.render('')
 }
 })
 
-API.get('/customer',(req,res)=>{
- customer.view().then((data)=>{}).catch(()=>{})
-})
-
+API.get('/page',async(req,res)=>{
+ 
+await customer.view().then((data)=>{console.log(data.data);res.render("new pages/new", {
+  data: data.data,
+  vaccine: data.vaccine,
+  exp: data.exp,
+  manu: data.manu
+});})
+});
 
 module.exports=API
 
-// SELECT login.*,AWS01.date FROM login inner join AWS01 ON AWS01.empi_id=login.emp_id WHERE login.emp_id=1
