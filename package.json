@@ -23,7 +23,7 @@
     "http-errors": "~1.6.3",
     "mongoclient": "^1.0.3",
     "mongodb": "^5.1.0",
-    "mongoose": "^7.0.1",
+    "mongoose": "^7.3.3",
     "morgan": "~1.9.1",
     "mysql": "^2.18.1",
     "node-gpsd": "^0.3.4",
